@@ -22,7 +22,6 @@ import com.smartcampus.dto.util.LocationType;
 import com.smartcampus.dto.util.ResponseType;
 import com.smartcampus.models.Unidad;
 
-import com.smartcampus.models.Unidad;
 import com.smartcampus.security.exceptions.NotFoundException;
 import com.smartcampus.services.IUnidadService;
 
@@ -57,8 +56,8 @@ public class UnidadController {
 			@ApiResponse(code = 200, message = "Unidad obtenida con éxito", response = Unidad.class),
 			@ApiResponse(code = 401, message = "Acceso no autorizado", response = SimpleObjectMessage.class),
 			@ApiResponse(code = 403, message = "Rol no permitido", response = SimpleObjectMessage.class),
-			@ApiResponse(code = 404, message = "No se	encontró el recurso solicitado", response = SimpleObjectMessage.class),
-			@ApiResponse(code = 500, message = "Error con	la conexión a la base de datos", response = SimpleObjectMessage.class) })
+			@ApiResponse(code = 404, message = "No se encontró el recurso solicitado", response = SimpleObjectMessage.class),
+			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
 	@GetMapping(value = "/showById/{id}", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showById(@PathVariable Long id) {
 		return new ResponseEntity<>(

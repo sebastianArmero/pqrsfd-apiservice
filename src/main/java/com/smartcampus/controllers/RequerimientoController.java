@@ -44,6 +44,11 @@ public class RequerimientoController {
 	private IRequerimientoService requerimientoService;
 
 	public static final String URL_CONTROLLER = "/requerimiento/api";
+	private static final String MENSAJE = "Objetos obtenidos con éxito";
+	private static final String MENSAJE_ERROR = "ER-0003";
+
+
+
 
 	@ApiOperation(nickname = "showAll", notes = "Este método obtiene todos los requerimientos que se manejan en las pqrsdf", value = "Ver todos los objetos creados", response = SimpleObjectResponse.class, produces = "application/json")
 	@ApiResponses(value = {
@@ -56,7 +61,7 @@ public class RequerimientoController {
 	@GetMapping(value = "/showAll", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showAll() {
 		return new ResponseEntity<>(
-				new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito", requerimientoService.showAll()),
+				new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE, requerimientoService.showAll()),
 				HttpStatus.OK);
 	}
 	
@@ -71,7 +76,7 @@ public class RequerimientoController {
 	@GetMapping(value = "/showAllAnonimo", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showAllAnonimo() {
 		return new ResponseEntity<>(
-				new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito", requerimientoService.showAllAnonimo()),
+				new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE, requerimientoService.showAllAnonimo()),
 				HttpStatus.OK);
 	}
 	
@@ -86,7 +91,7 @@ public class RequerimientoController {
 	@GetMapping(value = "/showAllHist", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showAllHist() {
 		return new ResponseEntity<>(
-				new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito", requerimientoService.showAllHist()),
+				new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE, requerimientoService.showAllHist()),
 				HttpStatus.OK);
 	}
 
@@ -98,14 +103,14 @@ public class RequerimientoController {
 	@PostMapping(value = "/create")
 	public ResponseEntity<SimpleObjectResponse> create(@RequestBody Requerimiento requermiento) {
 		try {
-			//requerimientoService.createRequ(requermiento);
+		
 			return new ResponseEntity<>(
 					new SimpleObjectResponse(HttpStatus.OK.value(), "requerimiento creada con éxito", requerimientoService.createRequ(requermiento)), HttpStatus.OK);
 
 		} catch (NotFoundException e) {
 			return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.NOT_FOUND.value(),
 					"No es posible crear requerimiento",
-					new SimpleObjectMessage("ER-0003", ResponseType.INFO, LocationType.FACHADA, URL_CONTROLLER)),
+					new SimpleObjectMessage(MENSAJE_ERROR, ResponseType.INFO, LocationType.FACHADA, URL_CONTROLLER)),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -120,7 +125,7 @@ public class RequerimientoController {
 			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
 	@GetMapping(value = "/showByIdRequ/{id}", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showByIdRequ(@PathVariable Long id) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE,
 				requerimientoService.showByIdRequ(id)), HttpStatus.OK);
 	}
 	
@@ -136,7 +141,7 @@ public class RequerimientoController {
 			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
 	@GetMapping(value = "/showByIdentificacionAll/{identificacion}", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showByIdentificacionAll(@PathVariable Long identificacion) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE,
 				requerimientoService.showByIdentificacionAll(identificacion)), HttpStatus.OK);
 	}
 	
@@ -152,7 +157,7 @@ public class RequerimientoController {
 			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
 	@GetMapping(value = "/showByIdentificacionHistory/{identificacion}", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showByIdentificacionHistory(@PathVariable Long identificacion) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE,
 				requerimientoService.showByIdentificacionHistory(identificacion)), HttpStatus.OK);
 	}
 	
@@ -171,7 +176,7 @@ public class RequerimientoController {
 		} catch (NotFoundException e) {
 			return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.NOT_FOUND.value(),
 					"No es posible crear los dias inhabiles",
-					new SimpleObjectMessage("ER-0003", ResponseType.INFO, LocationType.FACHADA, URL_CONTROLLER)),
+					new SimpleObjectMessage(MENSAJE_ERROR, ResponseType.INFO, LocationType.FACHADA, URL_CONTROLLER)),
 					HttpStatus.NOT_FOUND);
 		}
 
@@ -193,7 +198,7 @@ public class RequerimientoController {
 		} catch (NotFoundException e) {
 			return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.NOT_FOUND.value(),
 					"No es posible crear el estado",
-					new SimpleObjectMessage("ER-0003", ResponseType.INFO, LocationType.FACHADA, URL_CONTROLLER)),
+					new SimpleObjectMessage(MENSAJE_ERROR, ResponseType.INFO, LocationType.FACHADA, URL_CONTROLLER)),
 					HttpStatus.NOT_FOUND);
 		}
 

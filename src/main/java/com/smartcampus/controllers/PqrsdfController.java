@@ -42,6 +42,8 @@ public class PqrsdfController {
 	private IPqrsdfService pqrsdfService;
 
 	public static final String URL_CONTROLLER = "/pqrsdf/api";
+	private static final String MENSAJE = "Objetos obtenidos con éxito";
+
 
 	@ApiOperation(nickname = "showAll", notes = "Este método obtiene todas las pqrsdf", value = "Ver todos los objetos creados", response = SimpleObjectResponse.class, produces = "application/json")
 	@ApiResponses(value = {
@@ -54,7 +56,7 @@ public class PqrsdfController {
 	@GetMapping(value = "/showAll", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showAll() {
 		return new ResponseEntity<>(
-				new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito", pqrsdfService.showAll()),
+				new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE, pqrsdfService.showAll()),
 				HttpStatus.OK);
 	}
 
@@ -68,7 +70,7 @@ public class PqrsdfController {
 			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
 	@PostMapping(value = "/findByPegeId", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> findByPegeId(@RequestBody PegeIdDTO pegeid) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE,
 				pqrsdfService.findByPegeId(pegeid)), HttpStatus.OK);
 	}
 
@@ -83,7 +85,7 @@ public class PqrsdfController {
 	@PostMapping(value = "/findByIdentificacion", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> findByIdentificacion(
 			@RequestBody UserIdentificacionDTO identificacion) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE,
 				pqrsdfService.findByIdentificacion(identificacion)), HttpStatus.OK);
 	}
 
@@ -119,7 +121,7 @@ public class PqrsdfController {
 	@PostMapping(value = "/findByTermCondIdentificacion", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> findTermCondByIdentificacion(
 			@RequestBody UserIdentificacionDTO userIdentificacion) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE,
 				pqrsdfService.findTermCondByIdentificacion(userIdentificacion)), HttpStatus.OK);
 	}
 	

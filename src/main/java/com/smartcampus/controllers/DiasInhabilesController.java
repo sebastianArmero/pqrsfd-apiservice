@@ -45,6 +45,8 @@ public class DiasInhabilesController {
 	private IDiasInhabilesService diasInhabilesService;
 
 	public static final String URL_CONTROLLER = "/diasInhabiles/api";
+	private static final String MENSAJE = "Objetos obtenidos con éxito";
+
 
 	@ApiOperation(nickname = "showAll", notes = "Este método obtiene todos los dias inhabiles que se manejan en las pqrsdf", value = "Ver todos los objetos creados", response = SimpleObjectResponse.class, produces = "application/json")
 	@ApiResponses(value = {
@@ -57,7 +59,7 @@ public class DiasInhabilesController {
 	@GetMapping(value = "/showAll", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showAll() {
 		return new ResponseEntity<>(
-				new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito", diasInhabilesService.showAll()),
+				new SimpleObjectResponse(HttpStatus.OK.value(), MENSAJE, diasInhabilesService.showAll()),
 				HttpStatus.OK);
 	}
 
@@ -114,7 +116,7 @@ public class DiasInhabilesController {
 			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
 	@GetMapping(value = "/showByIdDiin/{id}", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showByIdDiin(@PathVariable Long id) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), MENSAJE,
 				diasInhabilesService.showByIdDiin(id)), HttpStatus.OK);
 	}
 	
@@ -130,7 +132,7 @@ public class DiasInhabilesController {
 	@GetMapping(value = "/showAllDiasInCons", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showAllDiasInCons() {
 		return new ResponseEntity<>(
-				new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito", diasInhabilesService.showAllDiasInCons()),
+				new SimpleObjectResponse(HttpStatus.OK.value(), MENSAJE, diasInhabilesService.showAllDiasInCons()),
 				HttpStatus.OK);
 	}
 	

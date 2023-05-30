@@ -16,18 +16,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.smartcampus.dto.SimpleObjectMessage;
 import com.smartcampus.dto.SimpleObjectResponse;
 import com.smartcampus.services.IAsignarService;
-import com.smartcampus.services.ITipoTipologiaService;
-
-
 import com.smartcampus.dto.util.LocationType;
 import com.smartcampus.dto.util.ResponseType;
 import com.smartcampus.models.Asignar;
-import com.smartcampus.models.Requerimiento;
-import com.smartcampus.models.TipoTipologia;
+
 
 import com.smartcampus.security.exceptions.NotFoundException;
 
@@ -41,6 +36,7 @@ public class AsignarController {
 	private IAsignarService asignarService;
 
 	public static final String URL_CONTROLLER = "/asignar/api";
+	private static final String MENSAJE = "Objetos obtenidos con éxito";
 
 
 	
@@ -54,7 +50,7 @@ public class AsignarController {
 			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
 	@GetMapping(value = "/showByIdFunc/{id}", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showByIdRequ(@PathVariable Long id) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), MENSAJE,
 				asignarService.showByIdFunc(id)), HttpStatus.OK);
 	}
 	
@@ -68,7 +64,7 @@ public class AsignarController {
 			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
 	@GetMapping(value = "/showByIdFuncHist/{idHist}", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showByIdFuncHist(@PathVariable Long idHist) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), MENSAJE,
 				asignarService.showByIdFuncHistory(idHist)), HttpStatus.OK);
 	}
 	
@@ -124,7 +120,7 @@ public class AsignarController {
 			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
 	@GetMapping(value = "/showByIdRequ/{id}", produces = "application/json;charset=UTF-8")
 	public ResponseEntity<SimpleObjectResponse> showByIdReque(@PathVariable Long id) {
-		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), "Objetos obtenidos con éxito",
+		return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.OK.value(), MENSAJE,
 				asignarService.showByIdRequ(id)), HttpStatus.OK);
 	}
 	

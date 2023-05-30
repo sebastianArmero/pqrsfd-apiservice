@@ -68,20 +68,15 @@ public class UsuarioExtController {
 		try {
 			SimpleObjectResponse simpleObjectResponse = iUsuarioExtService
 					.validateByIdentificacion(identificacion);
-			System.out.println("simpleObjectResponse " + simpleObjectResponse.toString());
+		
 			return new ResponseEntity<>(new SimpleObjectResponse(simpleObjectResponse.getCodigo(),
 					simpleObjectResponse.getMensaje(), simpleObjectResponse.getValor()), HttpStatus.OK);
 
 		} catch (NotFoundException e) {
-			SimpleObjectResponse simpleObjectResponse = new SimpleObjectResponse();
-			System.out.println("Exception " + e);
+		
 			return new ResponseEntity<>(new SimpleObjectResponse(404,
 					"Documento no registrado", ""), HttpStatus.OK);
 
-			/*return new ResponseEntity<>(new SimpleObjectResponse(HttpStatus.NOT_FOUND.value(),
-					"No es posible realizar la validación",
-					new SimpleObjectMessage("ER-0003", ResponseType.INFO, LocationType.FACHADA, URL_CONTROLLER)),
-					HttpStatus.NOT_FOUND);*/
 		}
 		
 	}
