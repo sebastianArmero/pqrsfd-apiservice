@@ -56,7 +56,7 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 					if (r.getPqrsPegeidUsuario() > 0) {
 						seq = 1;
 						ps.setLong(1, r.getPqrsPegeidUsuario());
-						System.out.println("CREATE -------" + sql.toString() + " PS   >>>>>>>>>>  " + ps.toString());
+						
 					}
 
 					ps.setInt(1 + seq, r.getPqrsPegeidreporta());
@@ -79,20 +79,14 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 
 	@Override
 	public void update(Long id, Pqrsdf r) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -104,19 +98,16 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 
 	@Override
 	public Pqrsdf showById(Long id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Pqrsdf showAllByLogin(String username) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Pqrsdf findById(Integer id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -129,7 +120,7 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 
 			sql.append("INSERT INTO public.tb_pqrsdf(" + " pqrs_pegeid_usuario, pqrs_pegeidreporta, pqrs_detalle, "
 					+ "pqrs_tipologia_id, pqrs_tiporecep_id, " + "pqrs_usuarioext) VALUES (?, ?, ?, ?, ?, ?)");
-		} else {
+		} else if (r.getPqrsPegeidUsuario() < 0){
 			sql.append("INSERT INTO public.tb_pqrsdf(" + " pqrs_pegeid_usuario, pqrs_pegeidreporta, pqrs_detalle, "
 					+ "pqrs_tipologia_id, pqrs_tiporecep_id, " + "pqrs_usuarioext) VALUES (?, ?, ?, ?, ?, ?)");
 		}
@@ -146,7 +137,7 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 				if (r.getPqrsPegeidUsuario() > 0) {
 					seq = 1;
 					ps.setLong(1, r.getPqrsPegeidUsuario());
-					System.out.println("CREATE -------" + sql.toString() + " PS   >>>>>>>>>>  " + ps.toString());
+				
 				}
 
 				ps.setInt(1 + seq, r.getPqrsPegeidreporta());
