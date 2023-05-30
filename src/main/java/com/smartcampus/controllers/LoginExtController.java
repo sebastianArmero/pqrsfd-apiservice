@@ -62,7 +62,6 @@ public class LoginExtController {
 					simpleObjectResponse.getMensaje(), simpleObjectResponse.getValor()), HttpStatus.OK);
 
 		} catch (NotFoundException e) {
-			SimpleObjectResponse simpleObjectResponse = new SimpleObjectResponse();
 			return new ResponseEntity<>(new SimpleObjectResponse(404,
 					"Documento no registrado", ""), HttpStatus.OK);
 
