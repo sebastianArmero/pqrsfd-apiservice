@@ -79,14 +79,18 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 
 	@Override
 	public void update(Long id, Pqrsdf r) {
+		//update pqrsfd
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
+		//delate with update pqrsfd
 	}
 
 	@Override
 	public void delete(Long id) {
+		//delate pqrsfd
+
 	}
 
 	@Override
@@ -120,10 +124,7 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 
 			sql.append("INSERT INTO public.tb_pqrsdf(" + " pqrs_pegeid_usuario, pqrs_pegeidreporta, pqrs_detalle, "
 					+ "pqrs_tipologia_id, pqrs_tiporecep_id, " + "pqrs_usuarioext) VALUES (?, ?, ?, ?, ?, ?)");
-		} else if (r.getPqrsPegeidUsuario() < 0){
-			sql.append("INSERT INTO public.tb_pqrsdf(" + " pqrs_pegeid_usuario, pqrs_pegeidreporta, pqrs_detalle, "
-					+ "pqrs_tipologia_id, pqrs_tiporecep_id, " + "pqrs_usuarioext) VALUES (?, ?, ?, ?, ?, ?)");
-		}
+		} 
 
 		KeyHolder holder = new GeneratedKeyHolder();
 
