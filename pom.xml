@@ -145,17 +145,7 @@
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0.3</version>
 		</dependency>
-		
-		<!-- <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok</artifactId> 
-			<version>1.18.16</version> <optional>true</optional> </dependency> -->
-
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-		<!-- <dependency> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
-			<version>3.6.1</version> </dependency> -->
-
-	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+				
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -189,22 +179,10 @@
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 			</plugin>
-
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
-				<version>2.4</version> <configuration> <source>1.8</source> <target>1.8</target> 
-				<fork>true</fork> <executable>${JAVA_HOME}/bin/javac</executable> <encoding>UTF-8</encoding> 
-				</configuration> </plugin> -->
-
-			<plugin>
+		<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- <plugin> <groupId>org.jvnet.jaxb2.maven2</groupId> <artifactId>maven-jaxb2-plugin</artifactId> 
-				<version>0.13.2</version> <executions> <execution> <goals> <goal>generate</goal> 
-				</goals> </execution> </executions> <configuration> <schemaLanguage>WSDL</schemaLanguage> 
-				<generateDirectory>${project.basedir}/src/main/java</generateDirectory> <generatePackage>facultad.wsdl</generatePackage> 
-				<schemas> <schema> <url>http://smartdev.uniajc.edu.co:8888/wse_facultad_v1-0.0.1/ws/facultad.wsdl</url> 
-				</schema> </schemas> </configuration> </plugin> -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
