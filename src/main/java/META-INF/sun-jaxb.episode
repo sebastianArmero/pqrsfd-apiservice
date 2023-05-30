@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.11 
+Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2021.11.23 a las 01:13:24 AM COT 
+
+  -->
+  <bindings xmlns:tns="http://uniajc.edu.co/facultad/web-service" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="facultad.wsdl"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:GetSedesRequest">
+      <class ref="facultad.wsdl.GetSedesRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetSedesResponse">
+      <class ref="facultad.wsdl.GetSedesResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:respuesta">
+      <class ref="facultad.wsdl.Respuesta"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetJornadaRequest">
+      <class ref="facultad.wsdl.GetJornadaRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetJornadaResponse">
+      <class ref="facultad.wsdl.GetJornadaResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetProgramasRequest">
+      <class ref="facultad.wsdl.GetProgramasRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetProgramasResponse">
+      <class ref="facultad.wsdl.GetProgramasResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetCarrerasRequest">
+      <class ref="facultad.wsdl.GetCarrerasRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetCarrerasResponse">
+      <class ref="facultad.wsdl.GetCarrerasResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetAllFacultadesRequest">
+      <class ref="facultad.wsdl.GetAllFacultadesRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetAllFacultadesResponse">
+      <class ref="facultad.wsdl.GetAllFacultadesResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetGrupoMateriaRequest">
+      <class ref="facultad.wsdl.GetGrupoMateriaRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetGrupoMateriaResponse">
+      <class ref="facultad.wsdl.GetGrupoMateriaResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetFranjasRequest">
+      <class ref="facultad.wsdl.GetFranjasRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetFranjasResponse">
+      <class ref="facultad.wsdl.GetFranjasResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetMateriasxGrupoRequest">
+      <class ref="facultad.wsdl.GetMateriasxGrupoRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetMateriasxGrupoResponse">
+      <class ref="facultad.wsdl.GetMateriasxGrupoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetGruposMateriasFranjProgRequest">
+      <class ref="facultad.wsdl.GetGruposMateriasFranjProgRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetGruposMateriasFranjProgResponse">
+      <class ref="facultad.wsdl.GetGruposMateriasFranjProgResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetAllMateriasRequest">
+      <class ref="facultad.wsdl.GetAllMateriasRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetAllMateriasResponse">
+      <class ref="facultad.wsdl.GetAllMateriasResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetAllActividadeBURequest">
+      <class ref="facultad.wsdl.GetAllActividadeBURequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetAllActividadeBUResponse">
+      <class ref="facultad.wsdl.GetAllActividadeBUResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetAllCursoRequest">
+      <class ref="facultad.wsdl.GetAllCursoRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetAllCursoResponse">
+      <class ref="facultad.wsdl.GetAllCursoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetMateriasxFacultadRequest">
+      <class ref="facultad.wsdl.GetMateriasxFacultadRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetMateriasxFacultadResponse">
+      <class ref="facultad.wsdl.GetMateriasxFacultadResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetMateriasxProgramaRequest">
+      <class ref="facultad.wsdl.GetMateriasxProgramaRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetMateriasxProgramaResponse">
+      <class ref="facultad.wsdl.GetMateriasxProgramaResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetMateriasxCodigoRequest">
+      <class ref="facultad.wsdl.GetMateriasxCodigoRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetMateriasxCodigoResponse">
+      <class ref="facultad.wsdl.GetMateriasxCodigoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:facultad">
+      <class ref="facultad.wsdl.Facultad"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:franja">
+      <class ref="facultad.wsdl.Franja"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:carrera">
+      <class ref="facultad.wsdl.Carrera"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:grupo">
+      <class ref="facultad.wsdl.Grupo"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:materia">
+      <class ref="facultad.wsdl.Materia"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:materiaprograma">
+      <class ref="facultad.wsdl.Materiaprograma"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:curso">
+      <class ref="facultad.wsdl.Curso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:tutoria">
+      <class ref="facultad.wsdl.Tutoria"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:bienestarUniversitario">
+      <class ref="facultad.wsdl.BienestarUniversitario"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sede">
+      <class ref="facultad.wsdl.Sede"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:jornada">
+      <class ref="facultad.wsdl.Jornada"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:programa">
+      <class ref="facultad.wsdl.Programa"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:grupoMateria">
+      <class ref="facultad.wsdl.GrupoMateria"/>
+    </bindings>
+  </bindings>
+</bindings>
