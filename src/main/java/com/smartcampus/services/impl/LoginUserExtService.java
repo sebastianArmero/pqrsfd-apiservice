@@ -100,7 +100,15 @@ public class LoginUserExtService implements ILoginUserExtService {
 			//System.out.println(ClassName.class.getClassLoader().getResource("--------- " + usuarioExt.toString()));// usuarioExt.toString()+"-------------");
 
 		} catch (Exception e) {
-			
+			if (e.getMessage().equals("401")) {
+				simpleObjectResponse.setCodigo(401);
+				simpleObjectResponse.setMensaje("No es correcto");
+			} else {
+				simpleObjectResponse.setCodigo(e.getCause().hashCode());
+				simpleObjectResponse.setMensaje(e.getMessage());
+			}
+	
+			//e.printStackTrace();
 		}
 		return usuarioExt;
 	}
