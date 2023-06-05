@@ -44,10 +44,8 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 			if (r.getPqrsdfId() < 0) {
 				sql.append("INSERT INTO public.tb_pqrsdf(" + " pqrs_pegeid_usuario, pqrs_pegeidreporta, pqrs_detalle, "
 						+ "pqrs_tipologia_id, pqrs_tiporecep_id,  " + "pqrs_usuarioext) VALUES (?, ?, ?, ?, ?, ?)");
-			} else {
-				sql.append("INSERT INTO public.tb_pqrsdf(" + " pqrs_pegeid_usuario, pqrs_pegeidreporta, pqrs_detalle, "
-						+ "pqrs_tipologia_id, pqrs_tiporecep_id, " + "pqrs_usuarioext) VALUES (?, ?, ?, ?, ?, ?)");
-			}
+			} 
+		
 
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
