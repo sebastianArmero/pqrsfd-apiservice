@@ -39,14 +39,11 @@ public class EncuestaJDBCRepositoryImpl implements IEncuestaRepository {
 	public void create(Encuesta r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_encuesta(\r\n"
-					+ "	requ_id, medio_id, encu_realizadopor,encu_procesoauditoria, encu_respvalor, encu_respdetalle)\r\n"
-					+ "	VALUES (?, ?, ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_encuesta(requ_id, medio_id, encu_realizadopor,encu_procesoauditoria, encu_respvalor, encu_respdetalle) VALUES (?, ?, ?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
 					ps.setInt(1, r.getRequId());	
 					ps.setInt(2, r.getMediId());
 					ps.setString(3, r.getEncuRealizadopor());

@@ -39,14 +39,12 @@ public class RadicadoJDBCRepositoryImpl implements IRadicadoRepository {
 	public void create(Radicado r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_radicado(\r\n"
-					+ "radi_anio, radi_numero,radi_registradopor, radi_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_radicado(radi_anio, radi_numero,radi_registradopor, radi_procesoauditoria)	VALUES (?, ?, ?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
+			
 					ps.setInt(1, r.getRadiAnio());
 					ps.setInt(2, r.getRadiNumero());
 					ps.setString(3, r.getRadiRegistradopor());

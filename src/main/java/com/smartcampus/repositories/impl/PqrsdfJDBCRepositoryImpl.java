@@ -61,9 +61,7 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 					ps.setString(2 + seq, r.getPqrsDetalle());
 					ps.setInt(3 + seq, r.getPqrsTipologiaId());
 					ps.setInt(4 + seq, r.getPqrsTiporecepId());
-					// ps.setInt(5 + seq, r.getPqrsEstadoPqrsdfId());
 					ps.setBoolean(5 + seq, r.isPqrsUsuarioExt());
-					System.out.println("CREATE <<<< " + r.toString());
 					ps.execute();
 					ps.close();
 					return true;
@@ -115,7 +113,7 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 
 	@Override
 	public Long createPqrsdf(Pqrsdf r) {
-		// KeyHolder keyHolder = new GeneratedKeyHolder();
+		
 
 		StringBuilder sql = new StringBuilder();
 		if (r.getPqrsPegeidUsuario() > 0) {
@@ -143,9 +141,7 @@ public class PqrsdfJDBCRepositoryImpl implements IPqrsdfRepository {
 				ps.setString(2 + seq, r.getPqrsDetalle());
 				ps.setInt(3 + seq, r.getPqrsTipologiaId());
 				ps.setInt(4 + seq, r.getPqrsTiporecepId());
-				// ps.setInt(5 + seq, r.getPqrsEstadoPqrsdfId());
 				ps.setBoolean(5 + seq, r.isPqrsUsuarioExt());
-				System.out.println("CREATE <<<< " + r.toString());
 				return ps;
 			}
 		}, holder);

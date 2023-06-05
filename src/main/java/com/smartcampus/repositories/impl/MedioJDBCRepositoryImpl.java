@@ -39,14 +39,11 @@ public class MedioJDBCRepositoryImpl implements IMedioRepository {
 	public void create(Medio r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_medio(\r\n"
-					+ "medi_nombre, medi_registradopor, medi_modificadopor,medi_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_medio( medi_nombre, medi_registradopor, medi_modificadopor,medi_procesoauditoria)	VALUES (?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
 					ps.setString(1, r.getMediNombre());
 					ps.setString(2, r.getMediRegistradopor());
 					ps.setString(3, r.getMediModificadopor());

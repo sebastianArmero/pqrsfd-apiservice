@@ -47,18 +47,9 @@ public class EstadoPqrsdfJDBCRepositoryImpl implements IEstadoPqrsdfRepository {
 					if (r.getEstadoPqrsdfId() < 0) {
 						seq = 1;
 						ps.setLong(1, r.getEstadoPqrsdfId());
-						System.out.println(
-								"Estado Create -------" + sql.toString() + " PS   >>>>>>>>>>  " + ps.toString());
 					}
 
 					ps.setLong(1 + seq, r.getPqrsdfId());
-					/*
-					 * ps.setString(2 + seq, r.getPqrsDetalle()); ps.setInt(3 + seq,
-					 * r.getPqrsTipologiaId()); ps.setInt(4 + seq, r.getPqrsTiporecepId());
-					 * ps.setInt(5 + seq, r.getPqrsEstadoPqrsdfId()); ps.setBoolean(6 + seq,
-					 * r.isPqrsUsuarioExt());
-					 */
-					System.out.println("CREATE <<<< " + r.toString());
 					ps.execute();
 					ps.close();
 					return true;

@@ -39,14 +39,12 @@ public class TipoUnidadJDBCRepositoryImpl implements ITipoUnidadRepository {
 	public void create(TipoUnidad r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_tipounidad(\r\n"
-					+ "tiun_nombre,tiun_registradopor, tiun_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_tipounidad( tiun_nombre,tiun_registradopor, tiun_procesoauditoria) VALUES (?, ?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
+				
 					ps.setString(1, r.getTiunNombre());
 					ps.setString(2, r.getTiunRegistradopor());
 					ps.setString(3, r.getTiunProcesoauditoria());

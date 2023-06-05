@@ -37,13 +37,10 @@ public class TipoTipologiaJDBCRepositoryImpl implements ITipoTipologiaRepository
 	public void create(TipoTipologia r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_tipotipologia(\r\n"
-					+ "titi_nombre,titi_descripcion, titi_nomenclatura, titi_vencimiento,titi_registradopor, titi_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_tipotipologia(titi_nombre,titi_descripcion, titi_nomenclatura, titi_vencimiento,titi_registradopor, titi_procesoauditoria) VALUES (?, ?, ?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
-					//ps.setInt(1, r.getTipologiaId());
 					ps.setString(1, r.getTitiNombre());
 					ps.setString(2, r.getTitiDescripcion());
 					ps.setString(3, r.getTitiNomenclatura());

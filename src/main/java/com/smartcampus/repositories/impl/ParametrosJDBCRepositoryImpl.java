@@ -39,9 +39,7 @@ public class ParametrosJDBCRepositoryImpl implements IParametrosRepository {
 	public void create(Parametros r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_parametros(\r\n"
-					+ "para_vencimiento, para_alertadias, para_registradpor, para_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_parametros(para_vencimiento, para_alertadias, para_registradpor, para_procesoauditoria) VALUES (?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {

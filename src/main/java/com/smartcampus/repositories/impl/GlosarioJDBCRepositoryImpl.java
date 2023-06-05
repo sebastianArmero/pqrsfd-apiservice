@@ -39,14 +39,11 @@ public class GlosarioJDBCRepositoryImpl implements IGlosarioRepository {
 	public void create(Glosario r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_glosario(\r\n"
-					+ "glos_nombre, glos_descripcion, glos_creadopor)\r\n"
-					+ "	VALUES ( ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_glosario(glos_nombre, glos_descripcion, glos_creadopor) VALUES ( ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
 					ps.setString(1, r.getGlosNombre());
 					ps.setString(2, r.getGlosDescripcion());
 					ps.setString(3, r.getGlosCreadopor());

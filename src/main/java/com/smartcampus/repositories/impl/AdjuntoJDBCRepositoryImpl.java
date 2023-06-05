@@ -47,7 +47,7 @@ public class AdjuntoJDBCRepositoryImpl implements IAdjuntoRepository {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
+					
 					ps.setInt(1, r.getRequId());
 					ps.setString(2, r.getAdjuNombre());
 					ps.setString(3, r.getAdjuRegistradoPor());

@@ -42,14 +42,12 @@ public class ComunicadoJDBCRepositoryImpl implements IComunicadoRepository {
 	public void create(Comunicado r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_comunicado(\r\n"
-					+ "	requ_id, comu_descripcion,comu_registradopor, comu_revisadopor, comu_estado,comu_procesoauditoria, comu_observacion, pege_id)\r\n"
-					+ "	VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_comunicado(requ_id, comu_descripcion,comu_registradopor, comu_revisadopor, comu_estado,comu_procesoauditoria, comu_observacion, pege_id)	VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
+				
 					ps.setInt(1, r.getRequId());
 					ps.setString(2, r.getComuDescripcion());
 					ps.setString(3, r.getComuRegistradopor());
@@ -62,7 +60,8 @@ public class ComunicadoJDBCRepositoryImpl implements IComunicadoRepository {
 					ps.close();
 					return true;
 				}
-			});try {
+			});
+			try {
 				StringBuilder sqlUpdate = new StringBuilder();
 				sqlUpdate.append("UPDATE TB_REQUERIMIENTO SET REQU_ESTADO= ? WHERE REQU_ID= ?");
 				jdbc.update(sqlUpdate.toString(),"RESUELTO",r.getRequId());

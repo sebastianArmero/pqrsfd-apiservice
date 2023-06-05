@@ -39,9 +39,7 @@ public class ProcesoJDBCRepositoryImpl implements IProcesoRepository {
 	public void create(Proceso r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_proceso(\r\n"
-					+ "proc_nombre, proc_descripcion,proc_registradopor, proc_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_proceso(proc_nombre, proc_descripcion,proc_registradopor, proc_procesoauditoria)	VALUES (?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {

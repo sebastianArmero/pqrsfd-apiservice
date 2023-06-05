@@ -34,6 +34,10 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 	@Autowired
 	private Environment env;
 
+
+	private static final String MENSAJE ="No se encontró el usuario con identificación No.:"
+
+
 	@Override
 	public UsuarioExt findByIdentificacion(String identificacion) {
 		try {
@@ -41,7 +45,7 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 			sql.append("select sec_usuario.id_usuario, sec_usuario.login, sec_usuario.password, sec_usuario.identificacion, sec_usuario.correo_electronico, sec_usuario.pege_id, sec_usuario.estado, sec_usuario.token_acces_new, sec_usuario.usua_fechacambio, sec_usuarioexterno.documento_tipo, sec_usuarioexterno.primernombre, sec_usuarioexterno.segundonombre, sec_usuarioexterno.primerapellido, sec_usuarioexterno.segundoapellido, sec_usuario.password_new, sec_usuarioexterno.telefono,sec_usuarioexterno.direccion, sec_usuarioexterno.ciudad, sec_usuarioexterno.correo_electronico_adicional, sec_usuarioexterno.celular from apps_uniajc.sec_usuario, apps_uniajc.sec_usuarioexterno where sec_usuario.id_usuario=sec_usuarioexterno.id_usuario and sec_usuario.identificacion='" + identificacion + "'");
 			return jdbc.queryForObject(sql.toString(), new UsuarioExtRowMapper());
 		} catch (EmptyResultDataAccessException e) {
-			throw new NotFoundException("No se encontró el usuario con identificación No.: " + identificacion);
+			throw new NotFoundException(MENSAJE + identificacion);
 		}
 	}
 
@@ -49,7 +53,6 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 	public void createUserExt(CrearUserExtDTO r) {
 		try {
 
-			System.out.println("CREATE" + r.toString());
 			StringBuilder sqlusuario = new StringBuilder();
 			StringBuilder sqlDatosusuarioExt = new StringBuilder();
 			StringBuilder sql = new StringBuilder();
@@ -65,12 +68,10 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 
 				sqlDatosusuarioExt
 						.append("INSERT INTO apps_uniajc.sec_usuarioexterno(id_usuario, documento_tipo, primernombre, segundonombre, primerapellido, segundoapellido, telefono, direccion, ciudad, correo_electronico_adicional, celular) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-				System.out.println("CREATE usuario -------" + sqlusuario.toString()+" PS   >>>>>>>>>>  "+ sqlusuario.toString());
-
+			
 			} else {
 				
-				System.out.println("CREATE usuario else-------" + sqlusuario.toString()+" PS   >>>>>>>>>>  "+ sqlusuario.toString());
-				sqlusuario.append(
+					sqlusuario.append(
 						"INSERT INTO apps_uniajc.sec_usuario(id_usuario, login, password, identificacion, correo_electronico, pege_id, estado, token_acces, password_new, token_acces_new) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 				sql.append(
@@ -79,16 +80,12 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 				sqlDatosusuarioExt.append("INSERT INTO apps_uniajc.sec_usuarioexterno (id_usuario, documento_tipo, primernombre, segundonombre, primerapellido, segundoapellido, telefono, direccion, ciudad, correo_electronico_adicional, celular) vaues (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 				
 			}
-			System.out.println("CREATE" + sqlusuario.toString());
-
+			
 			jdbc.execute(sqlusuario.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement psuser) throws SQLException, DataAccessException {
 					int seq = 1;
-					/*if (new Long(r.getIdentificacion()) > 0) {
-						seq = 1;
-						psuser.setLong(1,new Long(r.getIdentificacion()));
-					}*/
+		
 					psuser.setLong(1,new Long(r.getIdentificacion()));
 					psuser.setString(1 + seq, r.getLogin());
 					psuser.setString(2 + seq, "");
@@ -99,7 +96,6 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 					psuser.setString(7 + seq, "");
 					psuser.setString(8 + seq, "");
 					psuser.setString(9 + seq, "");
-					System.out.println("CREATE usuario -------" + psuser.toString()+" PS   >>>>>>>>>> sql "+ sqlusuario.toString());
 					psuser.execute();
 					psuser.close();
 					return true;
@@ -153,7 +149,6 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 	public UsuarioExt findByLogin(String username) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			// sql.append(env.getProperty("sql.validateloginext"));
 			sql.append("select * from apps_uniajc.sec_usuario where login='" + username + "'");
 			return jdbc.queryForObject(sql.toString(), new UsuarioExtRowMapper());
 		} catch (EmptyResultDataAccessException e) {
@@ -213,10 +208,9 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 					"select  sec_usuario.login, 0 id_usuario, '' password_new, '' identificacion, '' correo_electronico, 0 pege_id, '' estado, '' token_acces_new, '' usua_fechacambio, '' documento_tipo, '' segundonombre, '' primerapellido, '' segundoapellido, '' telefono, '' direccion, 0 ciudad, '' correo_electronico_adicional, '' celular, '' primernombre  from apps_uniajc.sec_usuario where sec_usuario.identificacion='"
 							+ identificacion + "' limit 1");
 			usuario = jdbc.queryForObject(sql.toString(), new UsuarioExtRowMapper());
-			System.out.println("Usuario ------------------>  " + usuario.getLogin());
 			return (usuario.getLogin().length() >= 1);
 		} catch (EmptyResultDataAccessException e) {
-			throw new NotFoundException("No se encontró el usuario con identificación No.: " + identificacion);
+			throw new NotFoundException(MENSAJE + identificacion);
 		}
 	}
 
@@ -234,7 +228,7 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 			System.out.println("Usuario Ext ------------------>  " + userExt.getLogin());
 			return (userExt.getPrimerNombre().length() >= 1);
 		} catch (EmptyResultDataAccessException e) {
-			throw new NotFoundException("No se encontró el usuario con identificación No.: " + identificacion);
+			throw new NotFoundException(MENSAJE + identificacion);
 		}
 	}
 

@@ -39,14 +39,11 @@ public class FormularioJDBCRepositoryImpl implements IFormularioRepository {
 	public void create(Formulario r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_formulario(\r\n"
-					+ "form_nombre, form_detalle, form_creadopor, form_modificadopor, form_estado, form_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_formulario(form_nombre, form_detalle, form_creadopor, form_modificadopor, form_estado, form_procesoauditoria) VALUES (?, ?, ?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
-					
-					//ps.setInt(1, r.getTipologiaId());
+				
 					ps.setString(1, r.getFormNombre());
 					ps.setString(2, r.getFormDetalle());
 					ps.setString(3, r.getFormCreadopor());

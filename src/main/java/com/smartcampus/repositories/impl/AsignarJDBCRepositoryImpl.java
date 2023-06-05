@@ -44,7 +44,7 @@ public class AsignarJDBCRepositoryImpl implements IAsignarRepository {
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
-					//ps.setInt(1, r.getTipologiaId());
+					
 					ps.setInt(1, r.getIdUsuario());
 					ps.setInt(2, r.getRequId());
 					ps.setString(3, r.getAsigCreadoPor());
@@ -102,7 +102,7 @@ public class AsignarJDBCRepositoryImpl implements IAsignarRepository {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		
 		
 		 StringBuilder sqlDelete = new StringBuilder();
 		 sqlDelete.append("DELETE FROM public.tb_asignar WHERE requ_id = ?");

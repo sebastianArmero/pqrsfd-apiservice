@@ -38,9 +38,7 @@ public class  DiasInhabilesJDBCRepositoryImpl implements IDiasInhabilesRepositor
 	public void create(DiasInhabiles r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_diasinhabiles(\r\n"
-					+ "diin_fecha,diin_registradopor, diin_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?)");
+			sql.append("INSERT INTO public.tb_diasinhabiles(diin_fecha,diin_registradopor, diin_procesoauditoria) VALUES (?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {

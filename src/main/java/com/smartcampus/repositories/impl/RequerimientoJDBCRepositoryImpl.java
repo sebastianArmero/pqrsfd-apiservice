@@ -35,7 +35,6 @@ import com.smartcampus.security.exceptions.NotFoundException;
 
 @Repository
 public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository {
-	
 
 
 	@Autowired
@@ -44,6 +43,8 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 
 	@Autowired
 	private Environment env;
+	private static final String REQU_ID = "REQU_ID";
+	private static final String MENSAJE = "No se encontró el usuario:";
 	
 	
 
@@ -53,9 +54,7 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 	public String createRequ(Requerimiento r) {
 		
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_requerimiento(\r\n"
-					+ "	asun_id, ciudad_id, tire_id, pege_id, medi_id, requ_otraciudad, requ_radicado, requ_descripcion, requ_fechaterminorespuesta, requ_registradopor, requ_procesoauditoria, requ_estado, unid_idterritorial, proc_id, requ_numdoc, requ_primernom, requ_segunom, requ_primerape, requ_seguape, requ_direc, requ_tel, requ_telop, requ_correo, requ_emailop, requ_url)\r\n"
-					+ "	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_requerimiento(asun_id, ciudad_id, tire_id, pege_id, medi_id, requ_otraciudad, requ_radicado, requ_descripcion, requ_fechaterminorespuesta, requ_registradopor, requ_procesoauditoria, requ_estado, unid_idterritorial, proc_id, requ_numdoc, requ_primernom, requ_segunom, requ_primerape, requ_seguape, requ_direc, requ_tel, requ_telop, requ_correo, requ_emailop, requ_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			KeyHolder holder = new GeneratedKeyHolder();
 			
 			jdbc.update(new PreparedStatementCreator() {
@@ -73,14 +72,10 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 					ps.setString(7, r.getRequRadicado());
 					ps.setString(8, r.getRequDescripcion());	
 					ps.setDate(9, new java.sql.Date(((Date) r.getRequFechaterminorespuesta()).getTime()));
-				//	ps.setDate(9,  new java.sql.Date(((Date)  r.getRequFechaterminorespuesta().getTime());
-				//	ps.setDate(9, (Date) r.getRequFechaterminorespuesta());
-				//	ps.setDate(10, new java.sql.Date(((Date) r.getRequFechacambio()).getTime()));
 					ps.setString(10, r.getRequRegistradopor());
 					ps.setString(11, r.getRequProcesoauditoria());
 					ps.setString(12, r.getRequEstado());
-				//	ps.setDate(14, new java.sql.Date(((Date) r.getRequFecharadicado()).getTime()));
-					ps.setInt(13, r.getUnidIdterritorial());
+			        ps.setInt(13, r.getUnidIdterritorial());
 					ps.setInt(14, r.getProcId());
 					ps.setInt(15, r.getRequNumDoc());
 					ps.setString(16, r.getRequPrimerNom());
@@ -100,13 +95,13 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 			try {
 				StringBuilder sqlUpdate = new StringBuilder();
 				sqlUpdate.append("UPDATE TB_REQUERIMIENTO SET REQU_RADICADO= REQUESEL.NOMENSEL || '-' || EXTRACT(YEAR FROM REQU_FECHARADICADO)|| '-' ||'00'||REQU_CONSECUTIVO_ID FROM (SELECT REQU.REQU_ID REQUIDSEL, tipologia.titi_nomenclatura NOMENSEL FROM PUBLIC.tb_tipotipologia AS tipologia, PUBLIC.tb_requerimiento as requ WHERE requ.TIRE_ID=tipologia.titi_id AND REQU.REQU_ID=?) AS REQUESEL WHERE  REQUESEL.REQUIDSEL=REQU_ID AND REQU_ID=?");
-			      jdbc.update(sqlUpdate.toString(),Long.parseLong(holder.getKeys().get("REQU_ID").toString()), Long.parseLong(holder.getKeys().get("REQU_ID").toString()));
+			      jdbc.update(sqlUpdate.toString(),Long.parseLong(holder.getKeys().get(REQU_ID).toString()), Long.parseLong(holder.getKeys().get("REQU_ID").toString()));
 				} catch (DuplicateKeyException e) {
-				  throw new BadRequestException("El registro con id=" + holder.getKeys().get("REQU_ID").toString() + " no existe");
+				  throw new BadRequestException("El registro con id=" + holder.getKeys().get(REQU_ID).toString() + " no existe");
 			}
 			
 			
-			return holder.getKeys().get("REQU_ID").toString();
+			return holder.getKeys().get(REQU_ID).toString();
 			
 	}
 
@@ -166,7 +161,7 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 			sql.append(env.getProperty("sql.requerimientobyid"));
 			return jdbc.query(sql.toString(), new Object[] { id }, new RequerimientoRowMapper());
 		} catch (EmptyResultDataAccessException e) {
-			throw new NotFoundException("No se encontró el usuario: " + id);
+			throw new NotFoundException(MENSAJE + id);
 		}
 	}
 
@@ -178,7 +173,7 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 			sql.append(env.getProperty("sql.requerimientobyidentificacionall"));
 			return jdbc.query(sql.toString(), new Object[] { identificacion }, new RequerimientoRowMapper());
 		} catch (EmptyResultDataAccessException e) {
-			throw new NotFoundException("No se encontró el usuario: " + identificacion);
+			throw new NotFoundException(MENSAJE + identificacion);
 		}
 	}
 
@@ -190,7 +185,7 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 			sql.append(env.getProperty("sql.requerimientobyhist"));
 			return jdbc.query(sql.toString(), new Object[] { identificacion }, new RequerimientoRowMapper());
 		} catch (EmptyResultDataAccessException e) {
-			throw new NotFoundException("No se encontró el usuario: " + identificacion);
+			throw new NotFoundException(MENSAJE + identificacion);
 		}
 	}
 	
