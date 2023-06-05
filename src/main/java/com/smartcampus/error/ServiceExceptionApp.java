@@ -15,6 +15,6 @@ public class ServiceExceptionApp extends Throwable{
 	
 	public ServiceExceptionApp( String message, Throwable cause ) {
 		super( message, cause);
-		LOGGER.error(cause.hashCode()+"",message,cause);
+		LOGGER.error(cause.hashCode() + " ", message, cause);
 	}
 }

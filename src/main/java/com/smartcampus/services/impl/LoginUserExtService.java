@@ -101,7 +101,6 @@ public class LoginUserExtService implements ILoginUserExtService {
 
 		} catch (Exception e) {
 			
-			//e.printStackTrace();
 		}
 		return usuarioExt;
 	}
