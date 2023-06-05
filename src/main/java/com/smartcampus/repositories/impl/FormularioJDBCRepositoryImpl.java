@@ -76,25 +76,25 @@ public class FormularioJDBCRepositoryImpl implements IFormularioRepository {
 
 	@Override
 	public void update(Long id, Formulario r) {
-		// TODO Auto-generated method stub
+		//formulario
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//formulario
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//formulario
 		
 	}
 
 	@Override
 	public Formulario showById(Long id) {
-		// TODO Auto-generated method stub
+		//formulario
 		return null;
 	}
 

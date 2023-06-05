@@ -79,31 +79,31 @@ public class TrazabilidadJDBCRepositoryImpl implements ITrazabilidadRepository {
 
 	@Override
 	public void update(Long id, Trazabilidad r) {
-		// TODO Auto-generated method stub
+		//trazabilidad
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//trazabilidad
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//trazabilidad
 		
 	}
 
 	@Override
 	public Trazabilidad showById(Long id) {
-		// TODO Auto-generated method stub
+		//trazabilidad
 		return null;
 	}
 
 	@Override
 	public List<Trazabilidad> showByIdRequ(Long id) {
-		// TODO Auto-generated method stub
+		//trazabilidad
 			try {
 			StringBuilder sql = new StringBuilder();
 			sql.append(env.getProperty("sql.trazabilidadByRequId"));

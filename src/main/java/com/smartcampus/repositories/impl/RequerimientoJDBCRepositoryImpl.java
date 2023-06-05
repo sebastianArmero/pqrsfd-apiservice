@@ -126,7 +126,7 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 
 	@Override
 	public void update(Long id, Requerimiento r) {
-		// TODO Auto-generated method stub
+		//requerimiento
 		
 		StringBuilder sqlUpdate = new StringBuilder();
 		sqlUpdate.append("UPDATE public.tb_requerimiento SET reclasi_tire_id = ? where  requ_id =  ?");
@@ -139,7 +139,7 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//requerimiento
 		
 		
 		
@@ -147,20 +147,20 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//requerimiento
 
 		
 	}
 
 	@Override
 	public Requerimiento showById(Long id) {
-		// TODO Auto-generated method stub
+		//requerimiento
 		return null;
 	}
 
 	@Override
 	public List<Requerimiento> showByIdRequ(Long id) {
-		// TODO Auto-generated method stub
+		//requerimiento
 		try {
 			StringBuilder sql = new StringBuilder();
 			sql.append(env.getProperty("sql.requerimientobyid"));
@@ -172,7 +172,7 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 
 	@Override
 	public List<Requerimiento> showByIdentificacionAll(Long identificacion) {
-		// TODO Auto-generated method stub
+		//requerimiento
 		try {
 			StringBuilder sql = new StringBuilder();
 			sql.append(env.getProperty("sql.requerimientobyidentificacionall"));
@@ -213,13 +213,13 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 
 	@Override
 	public void create(Requerimiento r) {
-		// TODO Auto-generated method stub
+		//requerimiento
 		
 	}
 
 	@Override
 	public List<Requerimiento> showAllAnonimo() {
-		// TODO Auto-generated method stub
+		//requerimiento
 		StringBuilder sql = new StringBuilder();
 		sql.append(env.getProperty("sql.requerimientomedAnonimo"));
 		return jdbc.query(sql.toString(), new RequerimientoRowMapper());
@@ -227,7 +227,7 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 
 	@Override
 	public void updateEstado(Long id, Requerimiento r) {
-		// TODO Auto-generated method stub
+		//requerimiento
 		
 		StringBuilder sqlUpdate = new StringBuilder();
 		sqlUpdate.append("UPDATE public.tb_requerimiento SET requ_estado = ? where  requ_id = ?");

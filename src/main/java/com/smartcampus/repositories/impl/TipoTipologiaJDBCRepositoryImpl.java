@@ -89,25 +89,25 @@ public class TipoTipologiaJDBCRepositoryImpl implements ITipoTipologiaRepository
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//tipotipologia
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//tipotipologia
 		
 	}
 
 	@Override
 	public TipoTipologia showById(Long id) {
-		// TODO Auto-generated method stub
+		//tipotipologia
 		return null;
 	}
 
 	@Override
 	public List<TipoTipologia> showByIdTiti(Long id) {
-		// TODO Auto-generated method stub
+		//tipotipologia
 		try {
 			StringBuilder sql = new StringBuilder();
 			sql.append(env.getProperty("sql.tipotipologiaById"));

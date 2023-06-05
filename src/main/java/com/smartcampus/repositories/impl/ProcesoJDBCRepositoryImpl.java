@@ -71,25 +71,25 @@ public class ProcesoJDBCRepositoryImpl implements IProcesoRepository {
 
 	@Override
 	public void update(Long id, Proceso r) {
-		// TODO Auto-generated method stub
+		//proceso
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//proceso
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//proceso
 		
 	}
 
 	@Override
 	public Proceso showById(Long id) {
-		// TODO Auto-generated method stub
+		//proceso
 		return null;
 	}
 

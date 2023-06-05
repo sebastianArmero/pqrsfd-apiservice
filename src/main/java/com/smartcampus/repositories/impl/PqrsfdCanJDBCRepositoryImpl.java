@@ -59,25 +59,29 @@ public class PqrsfdCanJDBCRepositoryImpl implements IPqrsfdCanRepository {
 
 	@Override
 	public void update(Long id, PqrsfdCan r) {
-		// TODO Auto-generated method stub
+		//canpqr
+
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//canpqr
+
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//canpqr
+
 		
 	}
 
 	@Override
 	public PqrsfdCan showById(Long id) {
-		// TODO Auto-generated method stub
+		//canpqr
+
 		return null;
 	}
 

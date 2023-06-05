@@ -71,25 +71,29 @@ public class PreguntasFrecuentesJDBCRepositoryImpl implements IPreguntasFrecuent
 
 	@Override
 	public void update(Long id, PreguntasFrecuente r) {
-		// TODO Auto-generated method stub
+		//preguntas
+
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//preguntas
+
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//preguntas
+
 		
 	}
 
 	@Override
 	public PreguntasFrecuente showById(Long id) {
-		// TODO Auto-generated method stub
+		//preguntas
+
 		return null;
 	}
 

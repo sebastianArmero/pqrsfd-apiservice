@@ -42,9 +42,7 @@ public class AdjuntoJDBCRepositoryImpl implements IAdjuntoRepository {
 	public void create(Adjunto r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_adjunto(\r\n"
-					+ "	requ_id, adju_nombre,adju_registradopor, adju_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_adjunto(requ_id, adju_nombre,adju_registradopor, adju_procesoauditoria) VALUES (?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
@@ -74,31 +72,31 @@ public class AdjuntoJDBCRepositoryImpl implements IAdjuntoRepository {
 
 	@Override
 	public void update(Long id, Adjunto r) {
-		// TODO Auto-generated method stub
+		//update
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		// deleteWithUpdate
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		// delete
 		
 	}
 
 	@Override
 	public Adjunto showById(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public List<Adjunto> showByIdRequ(Long id) {
-		// TODO Auto-generated method stub
+		
 		try {
 			StringBuilder sql = new StringBuilder();
 			sql.append(env.getProperty("sql.adjuntoByRequ"));

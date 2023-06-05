@@ -79,37 +79,37 @@ public class EstadoPqrsdfJDBCRepositoryImpl implements IEstadoPqrsdfRepository {
 
 	@Override
 	public void update(Long id, EstadoPqrsdf r) {
-		// TODO Auto-generated method stub
+		//EstadoPqr
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//EstadoPqr
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//EstadoPqr
 		
 	}
 
 	@Override
 	public EstadoPqrsdf showById(Long id) {
-		// TODO Auto-generated method stub
+		//EstadoPqr
 		return null;
 	}
 
 	@Override
 	public EstadoPqrsdf showAllByIdPqrsdf(Long id) {
-		// TODO Auto-generated method stub
+		//EstadoPqr
 		return null;
 	}
 
 	@Override
 	public EstadoPqrsdf findByIdPqrsdf(Integer id) {
-		// TODO Auto-generated method stub
+		//EstadoPqr
 		return null;
 	}
 

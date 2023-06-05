@@ -71,25 +71,25 @@ public class ParametrosJDBCRepositoryImpl implements IParametrosRepository {
 
 	@Override
 	public void update(Long id, Parametros r) {
-		// TODO Auto-generated method stub
+		//parametros
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//parametros
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//parametros
 		
 	}
 
 	@Override
 	public Parametros showById(Long id) {
-		// TODO Auto-generated method stub
+		//parametros
 		return null;
 	}
 

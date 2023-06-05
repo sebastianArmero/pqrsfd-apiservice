@@ -73,25 +73,25 @@ public class EncuestaJDBCRepositoryImpl implements IEncuestaRepository {
 
 	@Override
 	public void update(Long id, Encuesta r) {
-		// TODO Auto-generated method stub
+		//Encuesta
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//Encuesta
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//Encuesta
 		
 	}
 
 	@Override
 	public Encuesta showById(Long id) {
-		// TODO Auto-generated method stub
+		//Encuesta
 		return null;
 	}
 

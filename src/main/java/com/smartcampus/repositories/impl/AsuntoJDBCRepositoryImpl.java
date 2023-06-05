@@ -36,14 +36,12 @@ public class AsuntoJDBCRepositoryImpl implements IAsuntoRepository {
 	public void create(Asunto r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_asunto(\r\n"
-					+ "asun_nombre,asun_registradopor, asun_procesoauditoria)\r\n"
-					+ "	VALUES (?, ?, ?)");
+			sql.append("INSERT INTO public.tb_asunto(asun_nombre,asun_registradopor, asun_procesoauditoria) VALUES (?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
+				
 					ps.setString(1, r.getAsunNombre());
 					ps.setString(2, r.getAsunRegistradopor());
 					ps.setString(3, r.getAsunProcesoauditoria());
@@ -67,25 +65,25 @@ public class AsuntoJDBCRepositoryImpl implements IAsuntoRepository {
 
 	@Override
 	public void update(Long id, Asunto r) {
-		// TODO Auto-generated method stub
+		// update
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//deleteWithUpdate
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		// delete
 		
 	}
 
 	@Override
 	public Asunto showById(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

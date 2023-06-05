@@ -58,7 +58,7 @@ public class TermCondJDBCRepositoryImpl implements ITermCondRepository {
 		try {
 			StringBuilder sql = new StringBuilder();
 			sql.append(this.env.getProperty("sql.termcond"));
-			//sql.append("SELECT * from public.tb_termcond termcond where termcond.teco_identificacion=?");
+			//sql.append("SELECT * from public.tb_termcond termcond where termcond.teco_identificacion=?")
 			return jdbc.queryForObject(sql.toString(), new Object[] { userIdentificacion },	new TermCondRowMapper());
 		} catch (EmptyResultDataAccessException e) {
 			throw new NotFoundException(
@@ -69,37 +69,37 @@ public class TermCondJDBCRepositoryImpl implements ITermCondRepository {
 
 	@Override
 	public void update(Long id, TermCond r) {
-		// TODO Auto-generated method stub
+		//TemCond
 
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//TemCond
 
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//TemCond
 
 	}
 
 	@Override
 	public List<TermCond> showAll() {
-		// TODO Auto-generated method stub
+		//TemCond
 		return null;
 	}
 
 	@Override
 	public TermCond showById(Long id) {
-		// TODO Auto-generated method stub
+		//TemCond
 		return null;
 	}
 
 	@Override
 	public void create(TermCond r) {
-		// TODO Auto-generated method stub
+		//TemCond
 		
 	}
 

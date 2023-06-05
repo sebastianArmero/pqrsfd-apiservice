@@ -164,43 +164,43 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 	
 	@Override
 	public void update(Long id, UsuarioExt r) {
-		// TODO Auto-generated method stub
+		//usuarioExt
 
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//usuarioExt
 
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//usuarioExt
 
 	}
 
 	@Override
 	public List<UsuarioExt> showAll() {
-		// TODO Auto-generated method stub
+		//usuarioExt
 		return null;
 	}
 
 	@Override
 	public UsuarioExt showById(Long id) {
-		// TODO Auto-generated method stub
+		//usuarioExt
 		return null;
 	}
 
 	@Override
 	public UsuarioExt findByLoginAndPassword(String username, String password) {
-		// TODO Auto-generated method stub
+		//usuarioExt
 		return null;
 	}
 
 	@Override
 	public void create(UsuarioExt r) {
-		// TODO Auto-generated method stub
+		//usuarioExt
 		
 	}
 

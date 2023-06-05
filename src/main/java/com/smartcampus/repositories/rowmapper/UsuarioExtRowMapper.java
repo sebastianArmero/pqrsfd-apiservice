@@ -17,8 +17,7 @@ public class UsuarioExtRowMapper implements RowMapper<UsuarioExt> {
 		
 		
 		RolExt rol = new RolExt();
-		//ArrayList<Role> roles = new ArrayList<Role>();
-		List<RolExt> roles = new ArrayList<RolExt>();
+	    List<RolExt> roles = new ArrayList<RolExt>();
 		
 		rol.setVRolId(508);
 		rol.setVRolNombre("Usuario Externo");
@@ -27,11 +26,7 @@ public class UsuarioExtRowMapper implements RowMapper<UsuarioExt> {
 		rol.setVRolEstado("1");
 		rol.setVRolPublico("0");
 		roles.add(rol);
-		
-		/*roles(RolExt.builder().vRolId(508).vRolNombre("Usuario Externo")
-				.vRolDescripcion("Usuario externo para la aplicacion PQRSDF").vRolTipo("PQRSDF_EXTERNO")
-				.vRolEstado("1").vRolPublico("0");
-		*/
+	
 		return UsuarioExt.builder().idUsuario(rs.getInt("id_usuario")).login(rs.getString("login"))
 				.password(rs.getString("password_new")).identificacion(rs.getString("identificacion"))
 				.correoElectronico(rs.getString("correo_electronico")).pegeId(rs.getInt("pege_id"))

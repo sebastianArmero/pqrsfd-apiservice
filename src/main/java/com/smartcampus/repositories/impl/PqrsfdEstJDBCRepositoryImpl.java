@@ -66,25 +66,25 @@ public class PqrsfdEstJDBCRepositoryImpl implements IPqrsfdEstRepository {
 
 	@Override
 	public void update(Long id, PqrsfdEst r) {
-		// TODO Auto-generated method stub
+		//estadopqr
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//estadopqr
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//estadopqr
 		
 	}
 
 	@Override
 	public PqrsfdEst showById(Long id) {
-		// TODO Auto-generated method stub
+		//estadopqr
 		return null;
 	}
 

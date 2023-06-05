@@ -69,25 +69,25 @@ public class PreguntasJDBCRepositoryImpl implements IPreguntasRepository {
 
 	@Override
 	public void update(Long id, Preguntas r) {
-		// TODO Auto-generated method stub
+		//preguntas
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//preguntas
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//preguntas
 		
 	}
 
 	@Override
 	public Preguntas showById(Long id) {
-		// TODO Auto-generated method stub
+		//preguntas
 		return null;
 	}
 

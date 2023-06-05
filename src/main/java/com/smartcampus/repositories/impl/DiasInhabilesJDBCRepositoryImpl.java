@@ -77,19 +77,19 @@ public class  DiasInhabilesJDBCRepositoryImpl implements IDiasInhabilesRepositor
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//diasInhabiles
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//diasInhabiles
 		
 	}
 
 	@Override
 	public DiasInhabiles showById(Long id) {
-		// TODO Auto-generated method stub
+		//diasInhabiles
 		return null;
 	}
 
@@ -106,7 +106,7 @@ public class  DiasInhabilesJDBCRepositoryImpl implements IDiasInhabilesRepositor
 
 	@Override
 	public List<DiasInhabiles> showAllDiasInCons() {
-		// TODO Auto-generated method stub
+		//diasInhabiles
 		StringBuilder sql = new StringBuilder();
 		sql.append(env.getProperty("sql.diasInhabilesConsul"));
 		return jdbc.query(sql.toString(), new DiasInhabilesRowMapper());

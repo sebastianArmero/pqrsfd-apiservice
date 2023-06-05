@@ -71,25 +71,25 @@ public class RadicadoJDBCRepositoryImpl implements IRadicadoRepository {
 
 	@Override
 	public void update(Long id, Radicado r) {
-		// TODO Auto-generated method stub
+		//radicado
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//radicado
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//radicado
 		
 	}
 
 	@Override
 	public Radicado showById(Long id) {
-		// TODO Auto-generated method stub
+		//radicado
 		return null;
 	}
 

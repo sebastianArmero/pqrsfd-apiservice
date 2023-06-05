@@ -63,25 +63,25 @@ public class PqrsfdAsunJDBCRepositoryImpl implements IPqrsfdAsunRepository {
 
 	@Override
 	public void update(Long id, PqrsfdAsun r) {
-		// TODO Auto-generated method stub
+		//asuntopqr
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//asuntopqr
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//asuntopqr
 		
 	}
 
 	@Override
 	public PqrsfdAsun showById(Long id) {
-		// TODO Auto-generated method stub
+		//asuntopqr
 		return null;
 	}
 

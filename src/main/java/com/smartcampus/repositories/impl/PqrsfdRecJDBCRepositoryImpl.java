@@ -57,25 +57,25 @@ public class PqrsfdRecJDBCRepositoryImpl implements IPqrsfdRecRepository {
 
 	@Override
 	public void update(Long id, PqrsfdRec r) {
-		// TODO Auto-generated method stub
+		//recpqr
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//recpqr
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//recpqr
 		
 	}
 
 	@Override
 	public PqrsfdRec showById(Long id) {
-		// TODO Auto-generated method stub
+		//recpqr
 		return null;
 	}
 

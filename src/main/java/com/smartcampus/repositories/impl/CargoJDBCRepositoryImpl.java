@@ -33,14 +33,11 @@ public class CargoJDBCRepositoryImpl implements ICargoRepository {
 	public void create(Cargo r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_cargo(\r\n"
-					+ "	carg_nombre, carg_fechacambio, carg_registradopor, carg_procesoauditoria)\r\n"
-					+ "	VALUES ( ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_cargo(carg_nombre, carg_fechacambio, carg_registradopor, carg_procesoauditoria) VALUES ( ?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
 					ps.setString(1, r.getCargNombre());
 					ps.setString(2, r.getCargRegistradopor());
 					ps.setString(3, r.getCargProcesoauditoria());
@@ -65,25 +62,25 @@ public class CargoJDBCRepositoryImpl implements ICargoRepository {
 
 	@Override
 	public void update(Long id, Cargo r) {
-		// TODO Auto-generated method stub
+		//Cargo
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//Cargo
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//Cargo
 		
 	}
 
 	@Override
 	public Cargo showById(Long id) {
-		// TODO Auto-generated method stub
+		//Cargo
 		return null;
 	}
 

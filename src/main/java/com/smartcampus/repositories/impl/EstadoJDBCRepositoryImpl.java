@@ -61,25 +61,25 @@ public class EstadoJDBCRepositoryImpl implements IEstadoRepository {
 
 	@Override
 	public void update(Long id, Estado r) {
-		// TODO Auto-generated method stub
+		//Estado
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//Estado
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//Estado
 		
 	}
 
 	@Override
 	public Estado showById(Long id) {
-		// TODO Auto-generated method stub
+		//Estado
 		return null;
 	}
 

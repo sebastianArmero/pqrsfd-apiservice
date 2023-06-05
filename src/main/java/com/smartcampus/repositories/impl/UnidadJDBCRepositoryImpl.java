@@ -26,25 +26,25 @@ public class UnidadJDBCRepositoryImpl implements IUnidadRepository {
 
 	@Override
 	public void create(UnidadDTO r) {
-		// TODO Auto-generated method stub
+		//unidad
 
 	}
 
 	@Override
 	public void update(Long id, UnidadDTO r) {
-		// TODO Auto-generated method stub
+		//unidad
 
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//unidad
 
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//unidad
 
 	}
 

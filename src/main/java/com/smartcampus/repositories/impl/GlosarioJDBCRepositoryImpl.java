@@ -70,25 +70,25 @@ public class GlosarioJDBCRepositoryImpl implements IGlosarioRepository {
 
 	@Override
 	public void update(Long id, Glosario r) {
-		// TODO Auto-generated method stub
+		//Glosario
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//Glosario
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//Glosario
 		
 	}
 
 	@Override
 	public Glosario showById(Long id) {
-		// TODO Auto-generated method stub
+		//Glosario
 		return null;
 	}
 

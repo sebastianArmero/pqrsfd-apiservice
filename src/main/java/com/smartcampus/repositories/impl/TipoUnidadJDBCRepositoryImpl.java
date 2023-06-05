@@ -70,25 +70,25 @@ public class TipoUnidadJDBCRepositoryImpl implements ITipoUnidadRepository {
 
 	@Override
 	public void update(Long id, TipoUnidad r) {
-		// TODO Auto-generated method stub
+		//tipounidad
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//tipounidad
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//tipounidad
 		
 	}
 
 	@Override
 	public TipoUnidad showById(Long id) {
-		// TODO Auto-generated method stub
+		//tipounidad
 		return null;
 	}
 

@@ -40,9 +40,7 @@ public class AsignarJDBCRepositoryImpl implements IAsignarRepository {
 	public void create(Asignar r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_asignar(\r\n"
-					+ "	id_usuario, requ_id, asig_creadopor,asig_modificadopor, asig_estadoasignacion, asig_observacion)\r\n"
-					+ "	VALUES (?, ?, ?, ?, ?, ?);");
+			sql.append("INSERT INTO public.tb_asignar(id_usuario, requ_id, asig_creadopor,asig_modificadopor, asig_estadoasignacion, asig_observacion) VALUES (?, ?, ?, ?, ?, ?);");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
@@ -60,7 +58,7 @@ public class AsignarJDBCRepositoryImpl implements IAsignarRepository {
 			});
 		
 		} catch (DuplicateKeyException e) {
-			throw new BadRequestException("El registro con id=" + r.getAsigId() + " ya existe");
+			throw new BadRequestException("Al crear el registro con id=" + r.getAsigId() + " ya existe");
 		}
 
 	}
@@ -74,7 +72,7 @@ public class AsignarJDBCRepositoryImpl implements IAsignarRepository {
 	
 	@Override
 	public List<Asignar> showByIdFunc(Long id) {
-		// TODO Auto-generated method stub
+		
 		try {
 			StringBuilder sql = new StringBuilder();
 			sql.append(env.getProperty("sql.asignarRequerimiento"));
@@ -91,14 +89,14 @@ public class AsignarJDBCRepositoryImpl implements IAsignarRepository {
 			jdbc.update(sql.toString(),requeEstado,radicado.getRequId());
 		
 		} catch (DuplicateKeyException e) {
-			throw new BadRequestException("El registro con id=" + radicado.getRequId() + " no existe");
+			throw new BadRequestException("Al actualizar el registro con id=" + radicado.getRequId() + " no existe");
 		}
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		// deleteWithUpdate
 		
 	}
 
@@ -114,7 +112,7 @@ public class AsignarJDBCRepositoryImpl implements IAsignarRepository {
 
 	@Override
 	public Asignar showById(Long id) {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 
@@ -125,13 +123,13 @@ public class AsignarJDBCRepositoryImpl implements IAsignarRepository {
 			sql.append(env.getProperty("sql.asignarRequerimientoHist"));
 			return jdbc.query(sql.toString(), new Object[] { idHist }, new AsignarRowMapper());
 		} catch (EmptyResultDataAccessException e) {
-			throw new NotFoundException("No se encontró el usuario: " + idHist);
+			throw new NotFoundException("al buscar por funciionario no se encontró: " + idHist);
 		}
 	}
 
 	@Override
 	public void update(Long id, Asignar r) {
-		// TODO Auto-generated method stub
+		//update
 		
 	}
 

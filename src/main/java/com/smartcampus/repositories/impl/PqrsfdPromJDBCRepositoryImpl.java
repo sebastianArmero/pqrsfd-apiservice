@@ -57,25 +57,25 @@ public class PqrsfdPromJDBCRepositoryImpl implements IPqrsfdPromRepository {
 
 	@Override
 	public void update(Long id, PqrsfdProm r) {
-		// TODO Auto-generated method stub
+		//prompqr
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//prompqr
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//prompqr
 		
 	}
 
 	@Override
 	public PqrsfdProm showById(Long id) {
-		// TODO Auto-generated method stub
+		//prompqr
 		return null;
 	}
 
@@ -83,7 +83,7 @@ public class PqrsfdPromJDBCRepositoryImpl implements IPqrsfdPromRepository {
 
 	@Override
 	public List<PqrsfdProm> showAll() {
-		// TODO Auto-generated method stub
+		//prompqr
 		return null;
 	}
 

@@ -70,25 +70,25 @@ public class NormativaJDBCRepositoryImpl implements INormativaRepository {
 
 	@Override
 	public void update(Long id, Normativa r) {
-		// TODO Auto-generated method stub
+		//normativa
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//normativa
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//normativa
 		
 	}
 
 	@Override
 	public Normativa showById(Long id) {
-		// TODO Auto-generated method stub
+		//normativa
 		return null;
 	}
 

@@ -8,8 +8,4 @@ public interface IEstadoPqrsdfRepository extends IEntityRepository<EstadoPqrsdf,
 	
 	public EstadoPqrsdf findByIdPqrsdf(Integer id);
 	
-	//public void createEstadoPqrsdf(EstadoPqrsdf r);
-	
-	//public EstadoPqrsdf findByIdentificacion(String identificacion);
-	
 }

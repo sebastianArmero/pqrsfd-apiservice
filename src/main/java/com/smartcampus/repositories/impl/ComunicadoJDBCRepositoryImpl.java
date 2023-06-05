@@ -85,25 +85,25 @@ public class ComunicadoJDBCRepositoryImpl implements IComunicadoRepository {
 
 	@Override
 	public void update(Long id, Comunicado r) {
-		// TODO Auto-generated method stub
+		//Cominicado
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//Cominicado
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//Cominicado
 		
 	}
 
 	@Override
 	public Comunicado showById(Long id) {
-		// TODO Auto-generated method stub
+		//Cominicado
 		return null;
 	}
 

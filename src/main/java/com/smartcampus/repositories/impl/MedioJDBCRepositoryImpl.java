@@ -71,25 +71,25 @@ public class MedioJDBCRepositoryImpl implements IMedioRepository {
 
 	@Override
 	public void update(Long id, Medio r) {
-		// TODO Auto-generated method stub
+		//medio
 		
 	}
 
 	@Override
 	public void deleteWithUpdate(Long id) {
-		// TODO Auto-generated method stub
+		//medio
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		//medio
 		
 	}
 
 	@Override
 	public Medio showById(Long id) {
-		// TODO Auto-generated method stub
+		//medio
 		return null;
 	}
 
