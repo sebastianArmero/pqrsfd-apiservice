@@ -44,7 +44,7 @@ public class ProcesoJDBCRepositoryImpl implements IProcesoRepository {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
+					
 					ps.setString(1, r.getProcNombre());
 					ps.setString(2, r.getProcDescripcion());
 					ps.setString(3, r.getProcRegistradopor());

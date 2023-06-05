@@ -44,7 +44,7 @@ public class ParametrosJDBCRepositoryImpl implements IParametrosRepository {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					//ps.setInt(1, r.getTipologiaId());
+		
 					ps.setInt(1, r.getParaVencimiento());
 					ps.setInt(2, r.getParaAlertadias());
 					ps.setString(3, r.getParaRegistradpor());
