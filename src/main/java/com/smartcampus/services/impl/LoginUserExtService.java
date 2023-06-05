@@ -97,10 +97,11 @@ public class LoginUserExtService implements ILoginUserExtService {
 			// loginDao.updatePasswordnew(user.getPegeId(), newPass, jwt);
 			usuarioExt.setPasswordNew(newPass);
 			// user.setTokenAccesNew(jwt);
-			System.out.println(ClassName.class.getClassLoader().getResource("--------- " + usuarioExt.toString()));// usuarioExt.toString()+"-------------");
+			//System.out.println(ClassName.class.getClassLoader().getResource("--------- " + usuarioExt.toString()));// usuarioExt.toString()+"-------------");
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			
+			//e.printStackTrace();
 		}
 		return usuarioExt;
 	}
