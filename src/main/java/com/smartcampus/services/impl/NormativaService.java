@@ -47,25 +47,25 @@ public class NormativaService implements INormativaService {
 
 	@Override
 	public void update(Long id, Normativa r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Normativa> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return normativaRepository.showAll();
 	}
 
 	@Override
 	public Normativa showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

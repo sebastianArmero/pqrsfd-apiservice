@@ -46,7 +46,7 @@ public class EncuestaService implements IEncuestaService {
 
 	@Override
 	public List<Encuesta> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return encuestaRepository.showAll();
 	}
 
@@ -54,7 +54,7 @@ public class EncuestaService implements IEncuestaService {
 
 	@Override
 	public void update(Long id, Encuesta r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -62,7 +62,7 @@ public class EncuestaService implements IEncuestaService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -70,7 +70,7 @@ public class EncuestaService implements IEncuestaService {
 
 	@Override
 	public Encuesta showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

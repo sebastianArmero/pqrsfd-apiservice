@@ -8,7 +8,7 @@ public interface ILoginUserExtService extends IEntityService<UsuarioExt, Long> {
 
 	SimpleObjectResponse authenticateUser(String usuario, String clave);
 
-//	SimpleObjectResponse registrarUserExt(UsuarioExt usuarioExt);
+
 
 	SimpleObjectResponse authenticateUserRemember(String usuario, String clave, boolean rememberSession);
 

@@ -17,21 +17,5 @@ public interface IPqrsdfService extends IEntityService<Pqrsdf, Long> {
 
 	public void aceptarTermCond(UserIdentificacionDTO userIdentificacion);
 
-	/*
-	 * SimpleObjectResponse registrarUserExt(UsuarioExt usuarioExt);
-	 * 
-	 * SimpleObjectResponse authenticateUserRemember(String usuario, String clave,
-	 * boolean rememberSession);
-	 * 
-	 * SimpleObjectResponse olvideclave(String usuario);
-	 * 
-	 * SimpleObjectResponse validateUser(String usuario);
-	 * 
-	 * SimpleObjectResponse validateIdentificacion(String identificacion);
-	 * 
-	 * SimpleObjectResponse authenticateToken(String token);
-	 * 
-	 * SimpleObjectResponse refreshTokenUser(String usuario, String token, boolean
-	 * rememberSession);
-	 */
+
 }

@@ -42,37 +42,37 @@ public class PqrsfdAsunService implements IPqrsfdAsunService {
 
 	@Override
 	public void create(PqrsfdAsun r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void update(Long id, PqrsfdAsun r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<PqrsfdAsun> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return pqrsfdAsunRepository.showAll();
 	}
 
 	@Override
 	public PqrsfdAsun showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public List<PqrsfdAsun>  showByAnio(LocalDate fechaInicio, LocalDate fechaFinal) {
-		// TODO Auto-generated method stub
+	//coment
 		return pqrsfdAsunRepository.showByAnio(fechaInicio, fechaFinal);
 	}
 

@@ -53,26 +53,26 @@ public class AsignarService implements IAsignarService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		asignarRepository.delete(id);
 		
 	}
 
 	@Override
 	public List<Asignar> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return asignarRepository.showAll();
 	}
 
 	@Override
 	public Asignar showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public List<Asignar> showByIdFunc(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return asignarRepository.showByIdFunc(id);
 	}
 
@@ -83,13 +83,13 @@ public class AsignarService implements IAsignarService {
 
 	@Override
 	public void update(Long id, Asignar r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Asignar> showByIdRequ(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return asignarRepository.showByIdRequ(id);
 	}
 	

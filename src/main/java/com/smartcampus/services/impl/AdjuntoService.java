@@ -47,25 +47,25 @@ public class AdjuntoService implements IAdjuntoService {
 
 	@Override
 	public void update(Long id, Adjunto r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Adjunto> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return adjuntoRepository.showAll();
 	}
 
 	@Override
 	public Adjunto showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
@@ -84,7 +84,7 @@ public class AdjuntoService implements IAdjuntoService {
 
 	@Override
 	public List<Adjunto> showByIdRequ(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return adjuntoRepository.showByIdRequ(id);
 	
 	}

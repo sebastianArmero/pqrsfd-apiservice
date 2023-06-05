@@ -41,14 +41,14 @@ public class EstadoService implements IEstadoService {
 
 	@Override
 	public void update(Long id, Estado r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -61,7 +61,7 @@ public class EstadoService implements IEstadoService {
 
 	@Override
 	public Estado showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 	

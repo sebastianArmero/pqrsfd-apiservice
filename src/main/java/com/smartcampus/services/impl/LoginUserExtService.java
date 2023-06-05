@@ -38,7 +38,7 @@ public class LoginUserExtService implements ILoginUserExtService {
 
 	@Override
 	public SimpleObjectResponse validateUser(String username) {
-		// TODO Auto-generated method stub
+	//coment
 		if (username.isEmpty()) {
 			throw new BadRequestException("El usuario no puede ser vacia");
 		} else {
@@ -179,49 +179,49 @@ public class LoginUserExtService implements ILoginUserExtService {
 
 	@Override
 	public SimpleObjectResponse authenticateUserRemember(String usuario, String clave, boolean rememberSession) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public SimpleObjectResponse olvideclave(String usuario) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public SimpleObjectResponse authenticateToken(String token) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public SimpleObjectResponse refreshTokenUser(String usuario, String token, boolean rememberSession) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public void update(Long id, UsuarioExt r) {
-		// TODO Auto-generated method stub
+	//coment
 
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 
 	}
 
 	@Override
 	public List<UsuarioExt> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public UsuarioExt showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

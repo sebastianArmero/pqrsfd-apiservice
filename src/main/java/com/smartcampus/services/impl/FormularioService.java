@@ -47,25 +47,25 @@ public class FormularioService implements IFormularioService {
 
 	@Override
 	public void update(Long id, Formulario r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Formulario> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return formularioRepository.showAll();
 	}
 
 	@Override
 	public Formulario showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

@@ -47,25 +47,25 @@ public class RadicadoService implements IRadicadoService {
 
 	@Override
 	public void update(Long id, Radicado r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Radicado> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return radicadoRepository.showAll();
 	}
 
 	@Override
 	public Radicado showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

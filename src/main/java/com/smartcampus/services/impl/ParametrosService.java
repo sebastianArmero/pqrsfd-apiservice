@@ -45,25 +45,25 @@ public class ParametrosService implements IParametrosService {
 
 	@Override
 	public void update(Long id, Parametros r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Parametros> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return parametrosRepository.showAll();
 	}
 
 	@Override
 	public Parametros showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

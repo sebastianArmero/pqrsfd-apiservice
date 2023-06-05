@@ -44,25 +44,25 @@ public class PreguntasFrecuentesService implements IPreguntasFrecuentesService {
 
 	@Override
 	public void update(Long id, PreguntasFrecuente r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<PreguntasFrecuente> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return preguntasFrecuentesRepository.showAll();
 	}
 
 	@Override
 	public PreguntasFrecuente showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

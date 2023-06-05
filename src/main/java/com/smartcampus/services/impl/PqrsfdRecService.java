@@ -36,37 +36,37 @@ public class PqrsfdRecService implements IPqrsfdRecService {
 
 	@Override
 	public void create(PqrsfdRec r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void update(Long id, PqrsfdRec r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<PqrsfdRec> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return pqrsfdRecRepository.showAll();
 	}
 
 	@Override
 	public PqrsfdRec showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public List<PqrsfdRec> showByAnio(LocalDate fechaInicio, LocalDate fechaFinal) {
-		// TODO Auto-generated method stub
+	//coment
 		return pqrsfdRecRepository.showByAnio(fechaInicio, fechaFinal);
 	}
 

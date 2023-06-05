@@ -47,25 +47,25 @@ public class ProcesoService implements IProcesoService {
 
 	@Override
 	public void update(Long id, Proceso r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Proceso> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return procesoRepository.showAll();
 	}
 
 	@Override
 	public Proceso showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

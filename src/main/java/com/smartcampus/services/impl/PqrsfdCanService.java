@@ -39,37 +39,37 @@ public class PqrsfdCanService implements IPqrsfdCanService {
 
 	@Override
 	public void create(PqrsfdCan r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void update(Long id, PqrsfdCan r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<PqrsfdCan> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return pqrsfdCanRepository.showAll();
 	}
 
 	@Override
 	public PqrsfdCan showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public List<PqrsfdCan> showByAnio(LocalDate fechaInicio, LocalDate fechaFinal){
-		// TODO Auto-generated method stub
+	//coment
 		return pqrsfdCanRepository.showByAnioshowByAnio(fechaInicio, fechaFinal);
 	}
 

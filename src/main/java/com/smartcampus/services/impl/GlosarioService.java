@@ -47,25 +47,25 @@ public class GlosarioService implements IGlosarioService {
 
 	@Override
 	public void update(Long id, Glosario r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Glosario> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return glosarioRepository.showAll();
 	}
 
 	@Override
 	public Glosario showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

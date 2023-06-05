@@ -59,7 +59,7 @@ public class RequerimientoService implements IRequerimientoService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -78,26 +78,26 @@ public class RequerimientoService implements IRequerimientoService {
 
 	@Override
 	public List<Requerimiento> showByIdRequ(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return requerimientoRepository.showByIdRequ(id);
 	}
 
 	@Override
 	public Requerimiento showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 		
 	}
 
 	@Override
 	public List<Requerimiento> showByIdentificacionAll(Long identificacion) {
-		// TODO Auto-generated method stub
+	//coment
 		return requerimientoRepository.showByIdentificacionAll(identificacion);
 	}
 
 	@Override
 	public List<Requerimiento> showByIdentificacionHistory(Long identificacion) {
-		// TODO Auto-generated method stub
+	//coment
 		return requerimientoRepository.showByIdentificacionHistory(identificacion);
 	}
 
@@ -111,7 +111,7 @@ public class RequerimientoService implements IRequerimientoService {
 
 	@Override
 	public List<Requerimiento> showAllAnonimo() {
-		// TODO Auto-generated method stub
+	//coment
 		return requerimientoRepository.showAllAnonimo();
 	}
 

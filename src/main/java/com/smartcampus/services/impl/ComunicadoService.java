@@ -44,31 +44,31 @@ public class ComunicadoService implements IComunicadoService {
 
 	@Override
 	public void update(Long id, Comunicado r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Comunicado> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return comunicadoRepository.showAll();
 	}
 
 	@Override
 	public Comunicado showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public List<Comunicado> showByIdRequ(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return comunicadoRepository.showByIdRequ(id);
 		
 	}

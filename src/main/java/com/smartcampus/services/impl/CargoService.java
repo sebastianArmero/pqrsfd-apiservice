@@ -41,13 +41,13 @@ public class CargoService implements ICargoService {
 
 	@Override
 	public void update(Long id, Cargo r) {
-		// TODO Auto-generated method stub
+	//coment
 
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 
 	}
 
@@ -58,7 +58,7 @@ public class CargoService implements ICargoService {
 
 	@Override
 	public Cargo showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

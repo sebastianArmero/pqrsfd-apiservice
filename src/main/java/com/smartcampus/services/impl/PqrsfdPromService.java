@@ -44,7 +44,7 @@ public class PqrsfdPromService implements IPqrsfdPromService {
 
 	@Override
 	public List<PqrsfdProm> showByAnio(LocalDate fechaInicio, LocalDate fechaFinal){
-		// TODO Auto-generated method stub
+	//coment
 		return pqrsfdPromRepository.showByAnios(fechaInicio, fechaFinal);
 	}
 
@@ -52,7 +52,7 @@ public class PqrsfdPromService implements IPqrsfdPromService {
 
 	@Override
 	public void create(PqrsfdProm r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -60,7 +60,7 @@ public class PqrsfdPromService implements IPqrsfdPromService {
 
 	@Override
 	public void update(Long id, PqrsfdProm r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -68,7 +68,7 @@ public class PqrsfdPromService implements IPqrsfdPromService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -76,7 +76,7 @@ public class PqrsfdPromService implements IPqrsfdPromService {
 
 	@Override
 	public List<PqrsfdProm> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
@@ -84,7 +84,7 @@ public class PqrsfdPromService implements IPqrsfdPromService {
 
 	@Override
 	public PqrsfdProm showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

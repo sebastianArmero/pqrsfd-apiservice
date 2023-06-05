@@ -52,7 +52,7 @@ public class UnidadService implements IUnidadService {
 
 	@Override
 	public void create(Unidad r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -60,7 +60,7 @@ public class UnidadService implements IUnidadService {
 
 	@Override
 	public void update(Long id, Unidad r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -68,7 +68,7 @@ public class UnidadService implements IUnidadService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 

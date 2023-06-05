@@ -47,25 +47,25 @@ public class MedioService implements IMedioService {
 
 	@Override
 	public void update(Long id, Medio r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Medio> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return medioRepository.showAll();
 	}
 
 	@Override
 	public Medio showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

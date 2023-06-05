@@ -45,37 +45,37 @@ public class PqrsfdEstService implements IPqrsfdEstService {
 
 	@Override
 	public void create(PqrsfdEst r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void update(Long id, PqrsfdEst r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<PqrsfdEst> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return pqrsfdEstRepository.showAll();
 	}
 
 	@Override
 	public PqrsfdEst showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public List<PqrsfdEst> showByAnio(LocalDate fechaInicio, LocalDate fechaFinal) {
-		// TODO Auto-generated method stub
+	//coment
 		return pqrsfdEstRepository.showByAnio(fechaInicio, fechaFinal);
 	}
 

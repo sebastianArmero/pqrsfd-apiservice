@@ -62,7 +62,7 @@ public class DiasInhabilesService implements IDiasInhabilesService {
 
 	@Override
 	public void update(Long id, DiasInhabiles r) {
-		// TODO Auto-generated method stub
+	//coment
 		if (r == null) {
 			throw new BadRequestException("los dias inhabiles no debe estar vacio");
 		}else
@@ -73,7 +73,7 @@ public class DiasInhabilesService implements IDiasInhabilesService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
@@ -84,19 +84,19 @@ public class DiasInhabilesService implements IDiasInhabilesService {
 
 	@Override
 	public DiasInhabiles showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public List<DiasInhabiles> showByIdDiin(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return diasInhabilesRepository.showByIdDiin(id);
 	}
 
 	@Override
 	public List<DiasInhabiles> showAllDiasInCons() {
-		// TODO Auto-generated method stub
+	//coment
 		return diasInhabilesRepository.showAllDiasInCons();
 	}
 

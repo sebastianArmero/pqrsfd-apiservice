@@ -39,31 +39,31 @@ public class UsuarioExtService implements IUsuarioExtService {
 
 	@Override
 	public void create(UsuarioExt r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void update(Long id, UsuarioExt r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<UsuarioExt> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public UsuarioExt showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

@@ -44,25 +44,25 @@ public class AsuntoService implements IAsuntoService {
 
 	@Override
 	public void update(Long id, Asunto r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Asunto> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return asuntoRepository.showAll();
 	}
 
 	@Override
 	public Asunto showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

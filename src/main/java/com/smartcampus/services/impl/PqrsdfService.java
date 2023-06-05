@@ -73,13 +73,13 @@ public class PqrsdfService implements IPqrsdfService {
 
 	@Override
 	public void update(Long id, Pqrsdf r) {
-		// TODO Auto-generated method stub
+	//coment
 
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 
 	}
 
@@ -91,7 +91,7 @@ public class PqrsdfService implements IPqrsdfService {
 
 	@Override
 	public Pqrsdf showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

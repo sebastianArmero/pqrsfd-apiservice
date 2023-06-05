@@ -47,25 +47,25 @@ public class PreguntasService implements IPreguntasService {
 
 	@Override
 	public void update(Long id, Preguntas r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Preguntas> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return preguntasRepository.showAll();
 	}
 
 	@Override
 	public Preguntas showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 

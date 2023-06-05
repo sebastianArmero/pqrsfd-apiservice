@@ -33,37 +33,37 @@ public class FuncionarioService implements IFuncionarioService {
 
 	@Override
 	public List<Funcionario> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return funcionarioRepository.showAll();
 	}
 
 	@Override
 	public Funcionario showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return funcionarioRepository.showById(id);
 	}
 	
 	@Override
 	public List<Funcionario> showByIdFunc(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return funcionarioRepository.showByIdFunc(id);
 	}
 
 	@Override
 	public void create(Funcionario r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void update(Long id, Funcionario r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 

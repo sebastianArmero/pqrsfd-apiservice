@@ -44,31 +44,31 @@ public class TrazabilidadService implements ITrazabilidadService {
 
 	@Override
 	public void update(Long id, Trazabilidad r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<Trazabilidad> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return trazabilidadRepository.showAll();
 	}
 
 	@Override
 	public Trazabilidad showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public List<Trazabilidad> showByIdRequ(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return trazabilidadRepository.showByIdRequ(id);
 	}
 

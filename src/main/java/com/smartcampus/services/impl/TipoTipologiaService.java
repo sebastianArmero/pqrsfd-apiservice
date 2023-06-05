@@ -51,25 +51,25 @@ public class TipoTipologiaService implements ITipoTipologiaService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<TipoTipologia> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return tipoTipologiaRepository.showAll();
 	}
 
 	@Override
 	public TipoTipologia showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
 	@Override
 	public List<TipoTipologia> showByIdTiti(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return tipoTipologiaRepository.showByIdTiti(id) ;
 	}
 

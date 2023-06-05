@@ -44,25 +44,25 @@ public class TipoUnidadService implements ITipoUnidadService {
 
 	@Override
 	public void update(Long id, TipoUnidad r) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		
 	}
 
 	@Override
 	public List<TipoUnidad> showAll() {
-		// TODO Auto-generated method stub
+	//coment
 		return tipoUnidadRepository.showAll();
 	}
 
 	@Override
 	public TipoUnidad showById(Long id) {
-		// TODO Auto-generated method stub
+	//coment
 		return null;
 	}
 
