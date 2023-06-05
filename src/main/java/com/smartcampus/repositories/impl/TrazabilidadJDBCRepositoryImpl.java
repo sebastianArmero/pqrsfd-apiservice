@@ -42,7 +42,7 @@ public class TrazabilidadJDBCRepositoryImpl implements ITrazabilidadRepository {
 	public void create(Trazabilidad r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_trazabilidad(	requ_id, usua_idejecutor, usua_idasignado, traz_descripcion, traz_estado, traz_registradopor, traz_procesoauditoria) VALUES (?, ?, ?, ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_trazabilidad( requ_id, usua_idejecutor, usua_idasignado, traz_descripcion, traz_estado, traz_registradopor, traz_procesoauditoria) VALUES (?, ?, ?, ?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {

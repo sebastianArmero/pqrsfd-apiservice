@@ -95,7 +95,7 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 			try {
 				StringBuilder sqlUpdate = new StringBuilder();
 				sqlUpdate.append("UPDATE TB_REQUERIMIENTO SET REQU_RADICADO= REQUESEL.NOMENSEL || '-' || EXTRACT(YEAR FROM REQU_FECHARADICADO)|| '-' ||'00'||REQU_CONSECUTIVO_ID FROM (SELECT REQU.REQU_ID REQUIDSEL, tipologia.titi_nomenclatura NOMENSEL FROM PUBLIC.tb_tipotipologia AS tipologia, PUBLIC.tb_requerimiento as requ WHERE requ.TIRE_ID=tipologia.titi_id AND REQU.REQU_ID=?) AS REQUESEL WHERE  REQUESEL.REQUIDSEL=REQU_ID AND REQU_ID=?");
-			      jdbc.update(sqlUpdate.toString(),Long.parseLong(holder.getKeys().get(REQU_ID).toString()), Long.parseLong(holder.getKeys().get("REQU_ID").toString()));
+			      jdbc.update(sqlUpdate.toString(),Long.parseLong(holder.getKeys().get(REQU_ID).toString()), Long.parseLong(holder.getKeys().get(REQU_ID).toString()));
 				} catch (DuplicateKeyException e) {
 				  throw new BadRequestException("El registro con id=" + holder.getKeys().get(REQU_ID).toString() + " no existe");
 			}

@@ -39,7 +39,7 @@ public class NormativaJDBCRepositoryImpl implements INormativaRepository {
 	public void create(Normativa r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_normativa( norm_titulo, norm_descripcion, norm_creadopor)	VALUES (?, ?, ?);");
+			sql.append("INSERT INTO public.tb_normativa( norm_titulo, norm_descripcion, norm_creadopor) VALUES (?, ?, ?);");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {

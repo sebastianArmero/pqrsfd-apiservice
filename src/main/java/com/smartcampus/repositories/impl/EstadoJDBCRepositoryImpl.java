@@ -33,7 +33,7 @@ public class EstadoJDBCRepositoryImpl implements IEstadoRepository {
 	public void create(Estado r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO tb_estado(esta_estado_id, esta_nombre, esta_descripcion)	VALUES (?, ?, ?)");
+			sql.append("INSERT INTO tb_estado(esta_estado_id, esta_nombre, esta_descripcion) VALUES (?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {

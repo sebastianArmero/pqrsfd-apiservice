@@ -39,7 +39,7 @@ public class PreguntasJDBCRepositoryImpl implements IPreguntasRepository {
 	public void create(Preguntas r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_pregunta(preg_descripcion, preg_creadopor, preg_procesoauditoria)	VALUES (?, ?, ?)");
+			sql.append("INSERT INTO public.tb_pregunta(preg_descripcion, preg_creadopor, preg_procesoauditoria) VALUES (?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
