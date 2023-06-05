@@ -42,37 +42,42 @@ public class ComunicadoJDBCRepositoryImpl implements IComunicadoRepository {
 	public void create(Comunicado r) {
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO public.tb_comunicado(requ_id, comu_descripcion,comu_registradopor, comu_revisadopor, comu_estado,comu_procesoauditoria, comu_observacion, pege_id)	VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)");
+			sql.append("INSERT INTO public.tb_comunicado(requ_id, comu_descripcion,comu_registradopor, comu_revisadopor, comu_estado,comu_procesoauditoria, comu_observacion, pege_id) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)");
 			jdbc.execute(sql.toString(), new PreparedStatementCallback<Boolean>() {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
-					
-				
-					ps.setInt(1, r.getRequId());
-					ps.setString(2, r.getComuDescripcion());
-					ps.setString(3, r.getComuRegistradopor());
-					ps.setString(4, r.getComuRevisadopor());	
-					ps.setString(5, r.getComuEstado());	
-					ps.setString(6, r.getComuProcesoauditoria());
-					ps.setString(7, r.getComuObservacion());
-					ps.setString(8, r.getPegeId());
+					setPreparedStatementValues(ps, r);
 					ps.execute();
 					ps.close();
 					return true;
 				}
 			});
-			try {
-				StringBuilder sqlUpdate = new StringBuilder();
-				sqlUpdate.append("UPDATE TB_REQUERIMIENTO SET REQU_ESTADO= ? WHERE REQU_ID= ?");
-				jdbc.update(sqlUpdate.toString(),"RESUELTO",r.getRequId());
-				
-			} catch (DuplicateKeyException e) {
-				throw new BadRequestException("El registro con id=" + r.getComuId() + " no existe");
-			}
+			
+			updateRequerimientoEstado(r.getRequId());
 		} catch (DuplicateKeyException e) {
 			throw new BadRequestException("El registro con id=" + r.getComuId() + " ya existe");
 		}
-
+	}
+	
+	private void setPreparedStatementValues(PreparedStatement ps, Comunicado r) throws SQLException {
+		ps.setInt(1, r.getRequId());
+		ps.setString(2, r.getComuDescripcion());
+		ps.setString(3, r.getComuRegistradopor());
+		ps.setString(4, r.getComuRevisadopor());
+		ps.setString(5, r.getComuEstado());
+		ps.setString(6, r.getComuProcesoauditoria());
+		ps.setString(7, r.getComuObservacion());
+		ps.setString(8, r.getPegeId());
+	}
+	
+	private void updateRequerimientoEstado(int requId) {
+		try {
+			StringBuilder sqlUpdate = new StringBuilder();
+			sqlUpdate.append("UPDATE TB_REQUERIMIENTO SET REQU_ESTADO= ? WHERE REQU_ID= ?");
+			jdbc.update(sqlUpdate.toString(), "RESUELTO", requId);
+		} catch (DuplicateKeyException e) {
+			throw new BadRequestException("El registro con id=" + requId + " no existe");
+		}
 	}
 
 	@Override
