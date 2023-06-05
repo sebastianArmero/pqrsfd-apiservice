@@ -38,8 +38,10 @@ public class AsuntoService implements IAsuntoService {
 
 		if (asunto == null) {
 			throw new BadRequestException("El asunto no debe estar vacio");
-		}else
-		asuntoRepository.create(asunto);
+		}else{
+			asuntoRepository.create(asunto);
+
+		}
 	}
 
 	@Override

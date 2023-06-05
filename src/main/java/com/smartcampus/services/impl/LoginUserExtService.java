@@ -48,7 +48,7 @@ public class LoginUserExtService implements ILoginUserExtService {
 				simpleObjectResponse.setCodigo(200);
 				simpleObjectResponse.setMensaje("Usuario válido");
 				simpleObjectResponse.setValor("");
-				// simpleObjectResponse.setValor(usuarioExt);
+				
 			} else {
 				simpleObjectResponse.setCodigo(400);
 				simpleObjectResponse.setMensaje("Usuario no Encontrado");
@@ -58,7 +58,6 @@ public class LoginUserExtService implements ILoginUserExtService {
 
 		return simpleObjectResponse;
 
-		// return UsuarioExt;
 	}
 
 	@Override
@@ -68,7 +67,7 @@ public class LoginUserExtService implements ILoginUserExtService {
 		} else {
 			UsuarioExt usuarioExt = new UsuarioExt();
 			usuarioExt = usuarioExtRepository.findByIdentificacion(identificacion);
-			System.out.println("validar identificacion -------" + usuarioExt.toString());
+			
 			
 			if (usuarioExt.getIdentificacion().length() > 0) {
 				simpleObjectResponse.setCodigo(200);
@@ -90,15 +89,12 @@ public class LoginUserExtService implements ILoginUserExtService {
 	private UsuarioExt updatePass(UsuarioExt usuarioExt, String password) {
 		byte[] decodedBytes = Base64.getDecoder().decode(password);
 		String decodedString = new String(decodedBytes);
-		// String jwt = jwtUtils.generateJwtToken(user.getLogin(), user.getPegeId(),
-		// rememberme);
+		
 		String newPass = passwordEncoder.encode(decodedString);
 		try {
-			// loginDao.updatePasswordnew(user.getPegeId(), newPass, jwt);
+			
 			usuarioExt.setPasswordNew(newPass);
-			// user.setTokenAccesNew(jwt);
-			//System.out.println(ClassName.class.getClassLoader().getResource("--------- " + usuarioExt.toString()));// usuarioExt.toString()+"-------------");
-
+			
 		} catch (Exception e) {
 			if (e.getMessage().equals("401")) {
 				simpleObjectResponse.setCodigo(401);
@@ -128,27 +124,7 @@ public class LoginUserExtService implements ILoginUserExtService {
 				simpleObjectResponse.setCodigo(201);
 				simpleObjectResponse.setMensaje("Las credenciales son correctas");
 
-				/*
-				 * 
-				 * if (!jwtUtils.validateToken(usuarioExt.getTokenAcces(), usuarioExt)) { String
-				 * jwt = jwtUtils.generateJwtToken(usuarioExt.getLogin(),
-				 * usuarioExt.getPegeId(), rememberme); ///loginDao.actualizartoken(jwt, user);
-				 * usuarioExt.setTokenAcces(jwt); }
-				 */
-
-				// usuario.setListadoroles(loginDao.roles(user));
-				/*
-				 * UsuarioOracle usuarioOracle =
-				 * DatosUsuariosBasicosDao.getDatosUsusarioBasicos(usuarioExt.getPegeId());
-				 * 
-				 * if (usuarioOracle.getPrimernombre() == null) {
-				 * usuarioExt.setPrimerNombre("Usuario de Prueba"); } else {
-				 * usuarioExt.setPrimernombre(usuarioOracle.getPrimernombre());
-				 * usuarioExt.setSegundonombre(usuarioOracle.getSegundonombre());
-				 * usuarioExt.setPrimerapellido(usuarioOracle.getPrimerapellido());
-				 * usuarioExt.setSegundoapellido(usuarioOracle.getSegundoapellido()); }
-				 * 
-				 */
+	
 
 				simpleObjectResponse.setValor(usuarioExtAuth);
 			} else {

@@ -38,8 +38,10 @@ public class TipoUnidadService implements ITipoUnidadService {
 
 		if (tipoUnidad == null) {
 			throw new BadRequestException("El tipo de unidad no debe estar vacio");
-		}else
-		tipoUnidadRepository.create(tipoUnidad);
+		}else{
+			tipoUnidadRepository.create(tipoUnidad);
+
+		}
 	}
 
 	@Override

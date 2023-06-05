@@ -30,6 +30,8 @@ public class DiasInhabilesService implements IDiasInhabilesService {
 
 	SimpleObjectResponse simpleObjectResponse = new SimpleObjectResponse();
 	private GenerateJson generateJson = new GenerateJson();
+	public static final String MENSAJE = "los dias inhabiles no debe estar vacio";
+
 
 	@Autowired
 	private IDiasInhabilesRepository diasInhabilesRepository;
@@ -41,7 +43,7 @@ public class DiasInhabilesService implements IDiasInhabilesService {
 	public void create(DiasInhabiles diasInhabiles) throws BadRequestException {
 
 		if (diasInhabiles == null) {
-			throw new BadRequestException("los dias inhabiles no debe estar vacio");
+			throw new BadRequestException(MENSAJE);
 		}else
 		 diasInhabilesRepository.create(diasInhabiles);
 	}
@@ -50,7 +52,7 @@ public class DiasInhabilesService implements IDiasInhabilesService {
 	public void createDias(List<DiasInhabiles>  diasInhabil) throws BadRequestException {
 
 		if (diasInhabil == null) {
-			throw new BadRequestException("los dias inhabiles no debe estar vacio");
+			throw new BadRequestException(MENSAJE);
 		}else {
 		for (DiasInhabiles diasInhabiles : diasInhabil) {
 			 diasInhabilesRepository.create(diasInhabiles);
@@ -64,7 +66,7 @@ public class DiasInhabilesService implements IDiasInhabilesService {
 	public void update(Long id, DiasInhabiles r) {
 	//coment
 		if (r == null) {
-			throw new BadRequestException("los dias inhabiles no debe estar vacio");
+			throw new BadRequestException(MENSAJE);
 		}else
 		 diasInhabilesRepository.update(id, r);
 	

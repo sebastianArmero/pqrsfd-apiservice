@@ -41,8 +41,10 @@ public class FormularioService implements IFormularioService {
 
 		if (formulario == null) {
 			throw new BadRequestException("El asunto no debe estar vacio");
-		}else
-		formularioRepository.create(formulario);
+		}else{
+			formularioRepository.create(formulario);
+
+		}
 	}
 
 	@Override

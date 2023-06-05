@@ -41,8 +41,10 @@ public class MedioService implements IMedioService {
 
 		if (medio == null) {
 			throw new BadRequestException("El medio no debe estar vacio");
-		}else
-		medioRepository.create(medio);
+		}else{
+			medioRepository.create(medio);
+
+		}
 	}
 
 	@Override

@@ -74,7 +74,7 @@ public class UsuarioExtService implements IUsuarioExtService {
 	}
 
 	public  SimpleObjectResponse validateByIdentificacion(UserIdentificacionDTO identificacion) {
-		//boolean usuario=false;
+	
 
 
 		if(	(iUsuarioExtRepository.validateByIdentificacion(identificacion.getIdentificacion()))|| (iUsuarioExtRepository.validateByIdentificacionUserExt(Integer.parseInt(identificacion.getIdentificacion())))){

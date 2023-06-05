@@ -61,12 +61,10 @@ public class PqrsdfService implements IPqrsdfService {
 
 		Long pqrsdfId = pqrsdfRepository.createPqrsdf(pqrsdf);
 
-		// setIdPqrsdfUploadFile(pqrsdfId.longValue());
+	
 
 		if (pqrsdfId > 0) {
-			//EstadoPqrsdf pr = new EstadoPqrsdf(new Long(pqrsdfId));
-			System.out.println(pqrsdfId);
-			//estadoPqrsdfRepository.create(pr);
+			//EstadoPqrsdf 
 		}
 
 	}
@@ -122,8 +120,10 @@ public class PqrsdfService implements IPqrsdfService {
 	public void aceptarTermCond(UserIdentificacionDTO userIdentificacionDTO) {
 		if (userIdentificacionDTO == null) {
 			throw new BadRequestException("Los terminos no pueden estar vacios");
-		}else
-		termCondRepository.createTermCond(userIdentificacionDTO);
+		}else{
+			termCondRepository.createTermCond(userIdentificacionDTO);
+
+		}
 	}
 
 }

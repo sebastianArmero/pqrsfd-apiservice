@@ -41,8 +41,10 @@ public class NormativaService implements INormativaService {
 
 		if (normativa == null) {
 			throw new BadRequestException("la normativa no debe estar vacio");
-		}else
-		normativaRepository.create(normativa);
+		}else{
+			normativaRepository.create(normativa);
+
+		}
 	}
 
 	@Override

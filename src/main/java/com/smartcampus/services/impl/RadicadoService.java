@@ -41,8 +41,10 @@ public class RadicadoService implements IRadicadoService {
 
 		if (radicado == null) {
 			throw new BadRequestException("El radicado no debe estar vacio");
-		}else
-		radicadoRepository.create(radicado);
+		}else{
+			radicadoRepository.create(radicado);
+
+		}
 	}
 
 	@Override

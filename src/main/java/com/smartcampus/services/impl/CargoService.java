@@ -30,13 +30,16 @@ public class CargoService implements ICargoService {
 	@Autowired
 	JwtTokenUtil jwtUtils;
 
+
 	@Override
 	public void create(Cargo cargo) throws BadRequestException {
 
 		if (cargo == null) {
 			throw new BadRequestException("El cargo no debe estar vacio");
-		}else
-		cargoRepository.create(cargo);
+		}else{
+			cargoRepository.create(cargo);
+
+		}
 	}
 
 	@Override

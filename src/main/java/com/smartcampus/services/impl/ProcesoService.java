@@ -41,8 +41,10 @@ public class ProcesoService implements IProcesoService {
 
 		if (proceso == null) {
 			throw new BadRequestException("El proceso no debe estar vacio");
-		}else
-		procesoRepository.create(proceso);
+		}else{
+			procesoRepository.create(proceso);
+
+		}
 	}
 
 	@Override
