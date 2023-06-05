@@ -108,7 +108,6 @@ public class LoginUserExtService implements ILoginUserExtService {
 				simpleObjectResponse.setMensaje(e.getMessage());
 			}
 	
-			//e.printStackTrace();
 		}
 		return usuarioExt;
 	}

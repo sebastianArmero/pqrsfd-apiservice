@@ -78,45 +78,6 @@ public class UsuarioExt {
 	private String tokenAcces;
 	@ApiModelProperty(notes = "Token del usuario")
 	private List<RolExt> roles;
-	/*
-	public UsuarioExt(@NotNull(message = "El id no debe ser nulo") int idUsuario,
-			@NotNull(message = "El Tipo de documento no debe ser nulo") String documentoTipo,
-			@NotNull(message = "El identificacion no debe ser nulo") String identificacion,
-			@NotNull(message = "El primer nombre no debe ser nulo") String primerNombre, String segundoNombre,
-			@NotNull(message = "El primer apellido no debe ser nulo") String primerApellido, String segundoApellido,
-			@NotNull(message = "El pegeId no debe ser nulo") int pegeId,
-			@NotNull(message = "El Estado no debe ser nulo") String estado,
-			@NotNull(message = "La dirección no debe ser nula") String direccion,
-			@NotNull(message = "La ciudad") Integer ciudad,
-			@NotNull(message = "El teléfono no debe ser nulo") String telefono,
-			@NotNull(message = "El Correo electronico no debe ser nulo") String correoElectronico,
-			String correoOpcional, String celular, String usuafechacambio,
-			@NotNull(message = "El login no debe ser nulo") String login, String passwordNew, String tokenAccesNew,
-			String password, String tokenAcces) {
-		super();
-		this.idUsuario = idUsuario;
-		this.documentoTipo = documentoTipo;
-		this.identificacion = identificacion;
-		this.primerNombre = primerNombre;
-		this.segundoNombre = segundoNombre;
-		this.primerApellido = primerApellido;
-		this.segundoApellido = segundoApellido;
-		this.pegeId = pegeId;
-		this.estado = estado;
-		this.direccion = direccion;
-		this.ciudad = ciudad;
-		this.telefono = telefono;
-		this.correoElectronico = correoElectronico;
-		this.correoOpcional = correoOpcional;
-		this.celular = celular;
-		this.usuafechacambio = usuafechacambio;
-		this.login = login;
-		this.passwordNew = passwordNew;
-		this.tokenAccesNew = tokenAccesNew;
-		this.password = password;
-		this.tokenAcces = tokenAcces;
-	}
-
-*/
+	
 	
 }
