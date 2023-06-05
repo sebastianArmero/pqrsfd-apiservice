@@ -37,7 +37,7 @@ public class JwtTokenUtil implements Serializable {
 	
 	private static final Logger logger = Logger.getLogger(JwtTokenUtil.class.getName());
 
-	public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60 * 1000;
+	public static final long JWT_TOKEN_VALIDITY = 5L * 60 * 60 * 1000;
 	
 	@Autowired
 	private JwtUserDetailsServiceImpl userDetailsService;
