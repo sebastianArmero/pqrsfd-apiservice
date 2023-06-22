@@ -22,6 +22,7 @@ import com.smartcampus.dto.SimpleObjectResponse;
 import com.smartcampus.services.IUsuarioExtService;
 import com.smartcampus.dto.util.LocationType;
 import com.smartcampus.dto.util.ResponseType;
+import com.smartcampus.models.UserDTO;
 import com.smartcampus.models.UserIdentificacionDTO;
 import com.smartcampus.models.UsuarioExt;
 import com.smartcampus.security.exceptions.NotFoundException;
@@ -81,4 +82,31 @@ public class UsuarioExtController {
 		
 	}
 
+	@ApiOperation(nickname = "validatebyLogin", notes = "Este método obtiene los datos del usuario externo ", value = "Ver todos los objetos creados", response = SimpleObjectResponse.class, produces = "application/json")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Valor de un objeto obtenido con éxito"),
+			@ApiResponse(code = 400, message = "Controla lo relacionado con errores con la base de datos, mal formación en la petición al método", response = SimpleObjectMessage.class),
+			@ApiResponse(code = 401, message = "Acceso no autorizado, No ha iniciado sesión o token no válido", response = SimpleObjectMessage.class),
+			@ApiResponse(code = 403, message = "El rol no tiene permisos para acceder al método", response = SimpleObjectMessage.class),
+			@ApiResponse(code = 404, message = "No se encontró el recurso solicitado", response = SimpleObjectMessage.class),
+			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
+	@PostMapping(value = "/validatebyLogin", produces = "application/json;charset=UTF-8")
+	public ResponseEntity<SimpleObjectResponse> validatebyLogin(
+			@RequestBody UserDTO username) {
+		
+		try {
+			SimpleObjectResponse simpleObjectResponse = iUsuarioExtService
+					.validateByLogin(username);
+		
+			return new ResponseEntity<>(new SimpleObjectResponse(simpleObjectResponse.getCodigo(),
+					simpleObjectResponse.getMensaje(), simpleObjectResponse.getValor()), HttpStatus.OK);
+
+		} catch (NotFoundException e) {
+		
+			return new ResponseEntity<>(new SimpleObjectResponse(404,
+					"Documento no registrado", ""), HttpStatus.OK);
+
+		}
+		
+	}
 }

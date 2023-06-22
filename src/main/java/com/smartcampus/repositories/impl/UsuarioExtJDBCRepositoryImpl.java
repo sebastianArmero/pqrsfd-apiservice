@@ -35,7 +35,7 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 	private Environment env;
 
 
-	private static final String MENSAJE ="No se encontró el usuario con identificación No.:"
+	private static final String MENSAJE ="No se encontró el usuario con identificación No.:";
 
 
 	@Override
@@ -229,6 +229,22 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 			return (userExt.getPrimerNombre().length() >= 1);
 		} catch (EmptyResultDataAccessException e) {
 			throw new NotFoundException(MENSAJE + identificacion);
+		}
+	}
+
+	@Override
+	public boolean validateByLogin(String login) {
+		// validate by login
+		try {
+			UsuarioExt usuario = new UsuarioExt();
+			StringBuilder sql = new StringBuilder();
+			sql.append(
+					"select  sec_usuario.login, 0 id_usuario, '' password_new, '' identificacion, '' correo_electronico, 0 pege_id, '' estado, '' token_acces_new, '' usua_fechacambio, '' documento_tipo, '' segundonombre, '' primerapellido, '' segundoapellido, '' telefono, '' direccion, 0 ciudad, '' correo_electronico_adicional, '' celular, '' primernombre  from apps_uniajc.sec_usuario where sec_usuario.login='"
+							+ login + "' limit 1");
+			usuario = jdbc.queryForObject(sql.toString(), new UsuarioExtRowMapper());
+			return (usuario.getLogin().length() >= 1);
+		} catch (EmptyResultDataAccessException e) {
+			throw new NotFoundException(MENSAJE + login);
 		}
 	}
 

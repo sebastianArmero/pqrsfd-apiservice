@@ -16,6 +16,7 @@ import javassist.bytecode.stackmap.TypeData.ClassName;
 import com.smartcampus.commons.GenerateJson;
 import com.smartcampus.security.JwtTokenUtil;
 import com.smartcampus.dto.SimpleObjectResponse;
+import com.smartcampus.models.UserDTO;
 import com.smartcampus.models.UserIdentificacionDTO;
 import com.smartcampus.models.UsuarioExt;
 import com.smartcampus.repositories.IUsuarioExtRepository;
@@ -78,6 +79,23 @@ public class UsuarioExtService implements IUsuarioExtService {
 
 
 		if(	(iUsuarioExtRepository.validateByIdentificacion(identificacion.getIdentificacion()))|| (iUsuarioExtRepository.validateByIdentificacionUserExt(Integer.parseInt(identificacion.getIdentificacion())))){
+			simpleObjectResponse.setCodigo(200);
+			simpleObjectResponse.setMensaje("Usuario  Encontrado");
+			simpleObjectResponse.setValor("");
+		}else {
+			simpleObjectResponse.setCodigo(400);
+			simpleObjectResponse.setMensaje("Usuario no Encontrado");
+			simpleObjectResponse.setValor("");
+		}
+		
+		return simpleObjectResponse;
+	}
+
+	@Override
+	public SimpleObjectResponse validateByLogin(UserDTO username) {
+		// TODO Auto-generated method stub
+
+		if(	(iUsuarioExtRepository.validateByLogin(username.getUsername()))|| (iUsuarioExtRepository.validateByLogin((username.getUsername())))){
 			simpleObjectResponse.setCodigo(200);
 			simpleObjectResponse.setMensaje("Usuario  Encontrado");
 			simpleObjectResponse.setValor("");

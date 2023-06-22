@@ -18,6 +18,8 @@ public interface IUsuarioExtRepository extends IEntityRepository<UsuarioExt, Lon
 	public boolean validateByIdentificacion(String identificacion);
 
 	public boolean validateByIdentificacionUserExt(int identificacion);
+	
+	public boolean validateByLogin(String login);
 
 	
 }
