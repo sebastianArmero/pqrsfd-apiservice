@@ -225,7 +225,7 @@ public class UsuarioExtJDBCRepositoryImpl implements IUsuarioExtRepository {
 							+ identificacion + " limit 1");
 			userExt = jdbc.queryForObject(sql.toString(), new UsuarioExtRowMapper());
 
-			System.out.println("Usuario Ext ------------------>  " + userExt.getLogin());
+			
 			return (userExt.getPrimerNombre().length() >= 1);
 		} catch (EmptyResultDataAccessException e) {
 			throw new NotFoundException(MENSAJE + identificacion);

@@ -93,7 +93,7 @@ public class UsuarioExtService implements IUsuarioExtService {
 
 	@Override
 	public SimpleObjectResponse validateByLogin(UserDTO username) {
-		// TODO Auto-generated method stub
+		// validateByLogin
 
 		if(	(iUsuarioExtRepository.validateByLogin(username.getUsername()))|| (iUsuarioExtRepository.validateByLogin((username.getUsername())))){
 			simpleObjectResponse.setCodigo(200);
