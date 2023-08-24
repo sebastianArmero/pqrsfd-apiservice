@@ -35,7 +35,7 @@ class TipoTipologiaJDBCRepositoryImplTest {
     private Environment env;
 
     @Test
-    public void testCreateTipoTipologia() {
+    void testCreateTipoTipologia() {
         TipoTipologia tipoTipologia = new TipoTipologia();
         tipoTipologia.setTitiNombre("Nombre");
         tipoTipologia.setTitiDescripcion("Descripción");
