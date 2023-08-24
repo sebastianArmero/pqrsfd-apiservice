@@ -20,6 +20,7 @@ public class EncuestaRowMapper implements RowMapper<Encuesta> {
 		// stpq_pegeid_funcionario, stpq_tipo_estado_id, stpq_estado, stpq_pqrsdf_id
 		return Encuesta.builder().encuId(rs.getLong("encu_id"))
 				.requId(rs.getInt("requ_id"))
+				.requRadicado(rs.getString("requ_radicado"))
 				.mediId(rs.getInt("medio_id"))
 				.encuRealizadopor(rs.getString("encu_realizadopor"))
 				.encuFchTramite(rs.getDate("encu_fch_tramite"))

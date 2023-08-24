@@ -29,6 +29,9 @@ public class Asignar {
 	@ApiModelProperty(notes = "Id usuario funcionario")
 	private String funcNombre;
 
+	@ApiModelProperty(notes = "Id usuario funcionario")
+	private String funcEmail;
+	
 	@ApiModelProperty(notes = "Id requerimiento")
 	private int requId;
 

@@ -27,6 +27,10 @@ public class Encuesta {
 	@ApiModelProperty(notes = "Nombre del asunto")
 	private int requId;
 	
+	@ApiModelProperty(notes = "Proceso auditoria")
+	private String   requRadicado;
+		
+	
 	@ApiModelProperty(notes = "Nombre del asunto")
 	private int mediId;
 	

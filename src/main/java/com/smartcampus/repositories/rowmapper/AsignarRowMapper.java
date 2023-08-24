@@ -21,6 +21,7 @@ public class AsignarRowMapper implements RowMapper<Asignar> {
 				.idUsuario(rs.getInt("id_usuario"))
 				.requId(rs.getInt("requ_id"))
 				.funcNombre(rs.getString("func_nombre"))
+				.funcEmail(rs.getString("func_email"))
 				.asigCreadoPor(rs.getString("asig_creadopor"))
 				.asigFechaCreado(rs.getDate("asig_fechacreado"))
 				.asigFechaModifica(rs.getDate("asig_fechamodifica"))
