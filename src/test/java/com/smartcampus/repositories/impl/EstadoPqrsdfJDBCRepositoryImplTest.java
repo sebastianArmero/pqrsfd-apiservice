@@ -11,9 +11,13 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.core.env.Environment;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.test.context.ActiveProfiles;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @JdbcTest
@@ -36,14 +40,31 @@ import static org.mockito.Mockito.when;
     @MockBean
     private Environment env;
 
-    @Test
-     void testCreateEstadoPqrsdf() {
+    @SuppressWarnings("unchecked")
+	@Test
+    public void testCreateEstadoPqrsdf() {
         EstadoPqrsdf estadoPqrsdf = new EstadoPqrsdf();
         estadoPqrsdf.setPqrsdfId((long) 123); // Ajusta según tus datos
 
         when(env.getProperty("sql.estadoPqrsdf")).thenReturn("SELECT * FROM tb_estado_pqrsdf"); // Mock para env.getProperty()
 
         estadoPqrsdfRepository.create(estadoPqrsdf);
-        // Aquí podrías realizar aserciones para verificar que el objeto se ha creado correctamente en la base de datos
+
+        // Verificar que jdbc.execute fue llamado con el SQL correcto y los valores adecuados
+        verify(jdbcTemplate).execute(any(String.class), any(PreparedStatementCallback.class));
+    }
+
+    @SuppressWarnings("unchecked")
+	@Test
+    public void testCreateEstadoPqrsdfDuplicateKey() {
+        EstadoPqrsdf estadoPqrsdf = new EstadoPqrsdf();
+        estadoPqrsdf.setPqrsdfId((long) 123); // Ajusta según tus datos
+
+        when(env.getProperty("sql.estadoPqrsdf")).thenReturn("SELECT * FROM tb_estado_pqrsdf"); // Mock para env.getProperty()
+        when(jdbcTemplate.execute(any(String.class), any(PreparedStatementCallback.class)))
+                .thenThrow(DuplicateKeyException.class); // Simula una excepción de duplicado
+
+        // Aquí podrías realizar aserciones para verificar que se lanza la excepción esperada al crear un duplicado
     }
 }
+

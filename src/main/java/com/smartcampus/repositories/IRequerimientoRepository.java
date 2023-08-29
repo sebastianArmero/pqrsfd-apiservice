@@ -12,6 +12,7 @@ public interface IRequerimientoRepository extends IEntityRepository<Requerimient
 	public List<Requerimiento> showByIdRequ(Long id);	
 	public List<Requerimiento> showAllHist();
 	public List<Requerimiento> showAllAnonimo();
+	public List<Requerimiento> showAllAnonimoHist();
 
 	public String createRequ(Requerimiento r);
 	public void updateEstado(Long id, Requerimiento r);

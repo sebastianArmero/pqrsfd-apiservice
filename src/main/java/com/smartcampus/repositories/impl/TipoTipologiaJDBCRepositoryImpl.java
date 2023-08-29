@@ -29,13 +29,11 @@ public class TipoTipologiaJDBCRepositoryImpl implements ITipoTipologiaRepository
 	@Autowired
 	@Qualifier("jdbcPqrsdf")
 	private JdbcTemplate jdbc;
-
+ 
 	
 	@Autowired
 	private Environment env;
-	 public TipoTipologiaJDBCRepositoryImpl(JdbcTemplate jdbc) {
-	        this.jdbc = jdbc;
-	    }
+
 	@Override
 	public void create(TipoTipologia r) {
 		try {

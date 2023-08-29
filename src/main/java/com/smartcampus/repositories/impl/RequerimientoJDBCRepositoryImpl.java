@@ -234,6 +234,15 @@ public class RequerimientoJDBCRepositoryImpl implements IRequerimientoRepository
 		
 	}
 
+	@Override
+	public List<Requerimiento> showAllAnonimoHist() {
+		//requerimiento
+				StringBuilder sql = new StringBuilder();
+				sql.append(env.getProperty("sql.requerimientomedAnonimoHist"));
+				                                
+				return jdbc.query(sql.toString(), new RequerimientoRowMapper());
+	}
+
 
 
 	}

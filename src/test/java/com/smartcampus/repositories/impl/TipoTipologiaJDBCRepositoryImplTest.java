@@ -28,7 +28,7 @@ class TipoTipologiaJDBCRepositoryImplTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        tipoTipologiaRepository = new TipoTipologiaJDBCRepositoryImpl(jdbcTemplate);
+        tipoTipologiaRepository = new TipoTipologiaJDBCRepositoryImpl();
     }
     
     @MockBean

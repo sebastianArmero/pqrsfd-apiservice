@@ -17,6 +17,7 @@ public interface IRequerimientoService extends IEntityService<Requerimiento, Lon
 	public String createRequ(Requerimiento r);
 	
 	public List<Requerimiento> showAllAnonimo();
+	public List<Requerimiento> showAllAnonimoHist();
 	
 	public void updateEstado(Long id, Requerimiento r);
 	

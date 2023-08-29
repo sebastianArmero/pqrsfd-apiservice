@@ -124,6 +124,12 @@ public class RequerimientoService implements IRequerimientoService {
 		
 	}
 
+	@Override
+	public List<Requerimiento> showAllAnonimoHist() {
+		//coment
+		return requerimientoRepository.showAllAnonimoHist();
+	}
+
 	
 
 

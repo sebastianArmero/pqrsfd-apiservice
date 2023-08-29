@@ -80,6 +80,21 @@ public class RequerimientoController {
 				HttpStatus.OK);
 	}
 	
+	@ApiOperation(nickname = "showAllAnonimoHist", notes = "Este método obtiene todos los requerimientos anonimos historico que se manejan en las pqrsdf", value = "Ver todos los objetos creados", response = SimpleObjectResponse.class, produces = "application/json")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Valor de un objeto obtenido con éxito", response = Requerimiento.class),
+			@ApiResponse(code = 400, message = "Controla lo relacionado con errores con la base de datos, mal formación en la petición al método", response = SimpleObjectMessage.class),
+			@ApiResponse(code = 401, message = "Acceso no autorizado, No ha iniciado sesión o token no válido", response = SimpleObjectMessage.class),
+			@ApiResponse(code = 403, message = "El rol no tiene permisos para acceder al método", response = SimpleObjectMessage.class),
+			@ApiResponse(code = 404, message = "No se encontró el recurso solicitado", response = SimpleObjectMessage.class),
+			@ApiResponse(code = 500, message = "Error con la conexión a la base de datos", response = SimpleObjectMessage.class) })
+	@GetMapping(value = "/showAllAnonimoHist", produces = "application/json;charset=UTF-8")
+	public ResponseEntity<SimpleObjectResponse> showAllAnonimoHist() {
+		return new ResponseEntity<>(
+				new SimpleObjectResponse(HttpStatus.OK.value(),MENSAJE, requerimientoService.showAllAnonimoHist()),
+				HttpStatus.OK);
+	}
+	
 	@ApiOperation(nickname = "showAllHist", notes = "Este método obtiene todos los requerimientos que se manejan en las pqrsdf", value = "Ver todos los objetos creados", response = SimpleObjectResponse.class, produces = "application/json")
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "Valor de un objeto obtenido con éxito", response = Requerimiento.class),
