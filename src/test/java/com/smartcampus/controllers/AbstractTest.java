@@ -18,9 +18,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 @AutoConfigureMockMvc
 public class AbstractTest {
 
-	/**
-	 * ROLE_DECANO
-	 * */
+	
     protected static final String TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJhY2MiOjUwNTQwLCJzdWIiOiJmYWNpZnVlbnRlcyIsImNyZWF0ZWQiOjE1OTAyNDkwNzA5NDQsImlhdCI6MTU5MDI0OTA3MH0.28_gNy65tnOyl32pYRXnEf3MJM3oOWfi0o8ZyAS0KJoWA2kc9NbOWFpoz71Dt_gPg-fNyrBTrJrgRd5soDsRoQ";
 
     @Value("${jwt.header}")
@@ -32,7 +30,7 @@ public class AbstractTest {
 	protected String mapToJson(Object obj) throws JsonProcessingException {
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.registerModule(new JavaTimeModule());
-		objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+		objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, true);
 		return objectMapper.writeValueAsString(obj);
 	}
 
