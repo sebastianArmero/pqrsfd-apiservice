@@ -1,5 +1,4 @@
 package com.smartcampus.security.services;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -15,7 +14,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import com.smartcampus.security.models.JwtUser;
 import com.smartcampus.security.repositories.impl.UserJDBCRepositoryImpl;
 
-
 public class JwtUserDetailsServiceImplTest {
 
     @InjectMocks
@@ -28,7 +26,7 @@ public class JwtUserDetailsServiceImplTest {
     public void testLoadUserByUsername() {
         // Prepare test data
         String login = "testuser";
-        UserDetails userDetails = (UserDetails) new User();
+        UserDetails userDetails = new JwtUser();
 
         // Mock the behavior of UserRepository
         when(userRepository.selectByLogin(login)).thenReturn((JwtUser) userDetails);
@@ -48,6 +46,24 @@ public class JwtUserDetailsServiceImplTest {
 
         // Mock the behavior of UserRepository to throw UsernameNotFoundException
         when(userRepository.selectByLogin(login)).thenThrow(new UsernameNotFoundException("User not found"));
+
+        // Call the method to test
+        assertThrows(UsernameNotFoundException.class, () -> userDetailsService.loadUserByUsername(login));
+    }
+
+    @Test
+    public void testLoadUserByUsernameEmptyLogin() {
+        // Prepare test data
+        String login = "sarmero";
+
+        // Call the method to test
+        assertThrows(UsernameNotFoundException.class, () -> userDetailsService.loadUserByUsername(login));
+    }
+
+    @Test
+    public void testLoadUserByUsernameNullLogin() {
+        // Prepare test data
+        String login = null;
 
         // Call the method to test
         assertThrows(UsernameNotFoundException.class, () -> userDetailsService.loadUserByUsername(login));
