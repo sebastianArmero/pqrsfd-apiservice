@@ -11,7 +11,7 @@
 
 	<groupId>com.smartcampus</groupId>
 	<artifactId>rse_pqrsdf</artifactId>
-	<version>0.0.2-SNAPSHOT-DEV</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>Servicio rest PQRSDF for Spring Boot</description>
 	<packaging>war</packaging>
